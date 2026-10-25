@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bagent.android.SingleClickProtocolTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-24T21:32:50" hostname="STEVENLI" time="0.085">
+  <properties/>
+  <testcase name="rejectsTextAndFractionalIds" classname="com.bagent.android.SingleClickProtocolTest" time="0.063"/>
+  <testcase name="rejectsUnlistedId" classname="com.bagent.android.SingleClickProtocolTest" time="0.001"/>
+  <testcase name="uncertaintyDoesNotProduceAnAction" classname="com.bagent.android.SingleClickProtocolTest" time="0.0"/>
+  <testcase name="acceptsOnlyAllowedIntegerId" classname="com.bagent.android.SingleClickProtocolTest" time="0.001"/>
+  <testcase name="rejectsCoordinatesOrMultipleActions" classname="com.bagent.android.SingleClickProtocolTest" time="0.019"/>
+  <testcase name="acceptsFencedJson" classname="com.bagent.android.SingleClickProtocolTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

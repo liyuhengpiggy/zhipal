@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mobileagent.app.controller.ApplicationWindowPolicyTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-24T21:32:50" hostname="STEVENLI" time="0.006">
+  <properties/>
+  <testcase name="ownSetupActivityRemainsTheForegroundApp" classname="com.mobileagent.app.controller.ApplicationWindowPolicyTest" time="0.003"/>
+  <testcase name="touchedOverlayDoesNotReplaceUnderlyingApplication" classname="com.mobileagent.app.controller.ApplicationWindowPolicyTest" time="0.0"/>
+  <testcase name="missingApplicationDoesNotSelectSystemWindow" classname="com.mobileagent.app.controller.ApplicationWindowPolicyTest" time="0.001"/>
+  <testcase name="topApplicationUsedWhenOemOmitsFocusFlags" classname="com.mobileagent.app.controller.ApplicationWindowPolicyTest" time="0.0"/>
+  <testcase name="keyboardAndAccessibilityPanelAreNotTargetApplications" classname="com.mobileagent.app.controller.ApplicationWindowPolicyTest" time="0.0"/>
+  <testcase name="currentAppWinsOverBackgroundApp" classname="com.mobileagent.app.controller.ApplicationWindowPolicyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

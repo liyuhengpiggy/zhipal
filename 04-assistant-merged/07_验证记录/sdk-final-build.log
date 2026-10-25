@@ -1,0 +1,393 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.7/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :integration:checkKotlinGradlePluginConfigurationErrors
+> Task :integration:compileKotlin UP-TO-DATE
+> Task :integration:compileJava NO-SOURCE
+> Task :integration:processResources NO-SOURCE
+> Task :integration:classes UP-TO-DATE
+> Task :integration:jar UP-TO-DATE
+> Task :integration:sourcesJar UP-TO-DATE
+> Task :integration:compileTestKotlin UP-TO-DATE
+> Task :integration:compileTestJava NO-SOURCE
+> Task :integration:processTestResources NO-SOURCE
+> Task :integration:testClasses UP-TO-DATE
+> Task :integration:test UP-TO-DATE
+> Task :model_client:checkKotlinGradlePluginConfigurationErrors
+> Task :model_client:preBuild UP-TO-DATE
+> Task :model_client:preDebugBuild UP-TO-DATE
+> Task :model_client:generateDebugResValues UP-TO-DATE
+> Task :model_client:generateDebugResources UP-TO-DATE
+> Task :model_client:packageDebugResources UP-TO-DATE
+> Task :model_client:parseDebugLocalResources UP-TO-DATE
+> Task :model_client:generateDebugRFile UP-TO-DATE
+> Task :model_client:compileDebugKotlin UP-TO-DATE
+> Task :model_client:javaPreCompileDebug UP-TO-DATE
+> Task :model_client:compileDebugJavaWithJavac NO-SOURCE
+> Task :model_client:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :model_client:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :model_client:preDebugUnitTestBuild UP-TO-DATE
+> Task :model_client:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :model_client:compileDebugUnitTestKotlin UP-TO-DATE
+> Task :model_client:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :model_client:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :model_client:processDebugJavaRes UP-TO-DATE
+> Task :model_client:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :model_client:testDebugUnitTest UP-TO-DATE
+> Task :android_library:checkKotlinGradlePluginConfigurationErrors
+> Task :android_library:preBuild UP-TO-DATE
+> Task :android_library:preDebugBuild UP-TO-DATE
+> Task :android_library:generateDebugResValues UP-TO-DATE
+> Task :android_library:generateDebugResources UP-TO-DATE
+> Task :android_library:packageDebugResources UP-TO-DATE
+> Task :android_library:parseDebugLocalResources UP-TO-DATE
+> Task :android_library:generateDebugRFile UP-TO-DATE
+> Task :android_library:compileDebugKotlin UP-TO-DATE
+> Task :android_library:javaPreCompileDebug UP-TO-DATE
+> Task :android_library:compileDebugJavaWithJavac NO-SOURCE
+> Task :android_library:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :android_library:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :android_library:preDebugUnitTestBuild UP-TO-DATE
+> Task :android_library:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :android_library:compileDebugUnitTestKotlin UP-TO-DATE
+> Task :android_library:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :android_library:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :android_library:processDebugJavaRes UP-TO-DATE
+> Task :android_library:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :android_library:testDebugUnitTest UP-TO-DATE
+> Task :assistant_feature:checkKotlinGradlePluginConfigurationErrors
+> Task :assistant_feature:preBuild UP-TO-DATE
+> Task :assistant_feature:preDebugBuild UP-TO-DATE
+> Task :assistant_feature:generateDebugResValues UP-TO-DATE
+> Task :assistant_feature:generateDebugResources UP-TO-DATE
+> Task :assistant_feature:packageDebugResources UP-TO-DATE
+> Task :assistant_feature:parseDebugLocalResources UP-TO-DATE
+> Task :assistant_feature:generateDebugRFile UP-TO-DATE
+> Task :assistant_feature:javaPreCompileDebug UP-TO-DATE
+> Task :assistant_feature:preDebugUnitTestBuild UP-TO-DATE
+> Task :assistant_feature:generateDebugUnitTestStubRFile UP-TO-DATE
+> Task :assistant_feature:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :sample_app:preBuild UP-TO-DATE
+> Task :sample_app:preDebugBuild UP-TO-DATE
+> Task :sample_app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :sample_app:checkKotlinGradlePluginConfigurationErrors
+> Task :sample_app:generateDebugBuildConfig UP-TO-DATE
+> Task :android_library:compileDebugLibraryResources UP-TO-DATE
+> Task :assistant_feature:compileDebugLibraryResources UP-TO-DATE
+> Task :model_client:compileDebugLibraryResources UP-TO-DATE
+> Task :android_library:writeDebugAarMetadata UP-TO-DATE
+> Task :assistant_feature:writeDebugAarMetadata UP-TO-DATE
+> Task :model_client:writeDebugAarMetadata UP-TO-DATE
+> Task :sample_app:checkDebugAarMetadata UP-TO-DATE
+> Task :sample_app:generateDebugResValues UP-TO-DATE
+> Task :sample_app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :sample_app:generateDebugResources UP-TO-DATE
+> Task :sample_app:mergeDebugResources UP-TO-DATE
+> Task :sample_app:packageDebugResources UP-TO-DATE
+> Task :sample_app:parseDebugLocalResources UP-TO-DATE
+> Task :sample_app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :android_library:extractDeepLinksDebug UP-TO-DATE
+> Task :android_library:processDebugManifest UP-TO-DATE
+> Task :assistant_feature:extractDeepLinksDebug UP-TO-DATE
+> Task :assistant_feature:processDebugManifest UP-TO-DATE
+> Task :model_client:extractDeepLinksDebug UP-TO-DATE
+> Task :model_client:processDebugManifest UP-TO-DATE
+> Task :sample_app:extractDeepLinksDebug UP-TO-DATE
+> Task :sample_app:processDebugMainManifest UP-TO-DATE
+> Task :sample_app:processDebugManifest UP-TO-DATE
+> Task :sample_app:processDebugManifestForPackage UP-TO-DATE
+> Task :sample_app:processDebugResources UP-TO-DATE
+> Task :sample_app:javaPreCompileDebug UP-TO-DATE
+> Task :android_library:mergeDebugShaders UP-TO-DATE
+> Task :android_library:compileDebugShaders NO-SOURCE
+> Task :android_library:generateDebugAssets UP-TO-DATE
+> Task :android_library:packageDebugAssets UP-TO-DATE
+> Task :assistant_feature:mergeDebugShaders UP-TO-DATE
+> Task :assistant_feature:compileDebugShaders NO-SOURCE
+> Task :assistant_feature:generateDebugAssets UP-TO-DATE
+> Task :assistant_feature:packageDebugAssets UP-TO-DATE
+> Task :model_client:mergeDebugShaders UP-TO-DATE
+> Task :model_client:compileDebugShaders NO-SOURCE
+> Task :model_client:generateDebugAssets UP-TO-DATE
+> Task :model_client:packageDebugAssets UP-TO-DATE
+> Task :sample_app:mergeDebugShaders UP-TO-DATE
+> Task :sample_app:compileDebugShaders NO-SOURCE
+> Task :sample_app:generateDebugAssets UP-TO-DATE
+> Task :sample_app:mergeDebugAssets UP-TO-DATE
+> Task :sample_app:compressDebugAssets UP-TO-DATE
+> Task :sample_app:desugarDebugFileDependencies UP-TO-DATE
+> Task :sample_app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :sample_app:mergeDebugStartupProfile UP-TO-DATE
+> Task :sample_app:mergeExtDexDebug UP-TO-DATE
+> Task :android_library:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :model_client:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :android_library:mergeDebugJniLibFolders UP-TO-DATE
+> Task :android_library:mergeDebugNativeLibs NO-SOURCE
+> Task :android_library:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :assistant_feature:mergeDebugJniLibFolders UP-TO-DATE
+> Task :assistant_feature:mergeDebugNativeLibs NO-SOURCE
+> Task :assistant_feature:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :model_client:mergeDebugJniLibFolders UP-TO-DATE
+> Task :model_client:mergeDebugNativeLibs NO-SOURCE
+> Task :model_client:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :sample_app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :sample_app:mergeDebugNativeLibs NO-SOURCE
+> Task :sample_app:stripDebugDebugSymbols NO-SOURCE
+> Task :sample_app:validateSigningDebug UP-TO-DATE
+> Task :sample_app:writeDebugAppMetadata UP-TO-DATE
+> Task :sample_app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :sample_app:preDebugAndroidTestBuild SKIPPED
+> Task :sample_app:processDebugAndroidTestManifest UP-TO-DATE
+> Task :sample_app:generateDebugAndroidTestBuildConfig UP-TO-DATE
+> Task :sample_app:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :sample_app:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :sample_app:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :sample_app:generateDebugAndroidTestResources UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :sample_app:processDebugAndroidTestResources UP-TO-DATE
+> Task :sample_app:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestShaders UP-TO-DATE
+> Task :sample_app:compileDebugAndroidTestShaders NO-SOURCE
+> Task :sample_app:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :sample_app:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :sample_app:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :sample_app:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :sample_app:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :sample_app:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :sample_app:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :sample_app:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :android_library:stripDebugDebugSymbols NO-SOURCE
+> Task :android_library:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :android_library:extractDebugAnnotations UP-TO-DATE
+> Task :android_library:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :android_library:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :android_library:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :android_library:prepareDebugArtProfile UP-TO-DATE
+> Task :android_library:prepareLintJarForPublish UP-TO-DATE
+> Task :android_library:mergeDebugJavaResource UP-TO-DATE
+> Task :android_library:syncDebugLibJars UP-TO-DATE
+> Task :android_library:bundleDebugLocalLintAar UP-TO-DATE
+> Task :model_client:stripDebugDebugSymbols NO-SOURCE
+> Task :model_client:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :model_client:extractDebugAnnotations UP-TO-DATE
+> Task :model_client:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :model_client:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :model_client:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :model_client:prepareDebugArtProfile UP-TO-DATE
+> Task :model_client:prepareLintJarForPublish UP-TO-DATE
+> Task :model_client:mergeDebugJavaResource UP-TO-DATE
+> Task :model_client:syncDebugLibJars UP-TO-DATE
+> Task :model_client:bundleDebugLocalLintAar UP-TO-DATE
+> Task :android_library:createFullJarDebug UP-TO-DATE
+> Task :android_library:preDebugAndroidTestBuild UP-TO-DATE
+> Task :android_library:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :android_library:writeDebugLintModelMetadata UP-TO-DATE
+> Task :model_client:createFullJarDebug UP-TO-DATE
+> Task :model_client:writeDebugLintModelMetadata UP-TO-DATE
+> Task :android_library:generateDebugAndroidTestLintModel UP-TO-DATE
+> Task :android_library:extractProguardFiles UP-TO-DATE
+> Task :model_client:extractProguardFiles UP-TO-DATE
+> Task :model_client:generateDebugLintModel UP-TO-DATE
+> Task :android_library:generateDebugLintModel UP-TO-DATE
+> Task :android_library:generateDebugUnitTestLintModel UP-TO-DATE
+> Task :model_client:lintAnalyzeDebug UP-TO-DATE
+> Task :android_library:lintAnalyzeDebug UP-TO-DATE
+> Task :android_library:lintAnalyzeDebugAndroidTest UP-TO-DATE
+> Task :android_library:lintAnalyzeDebugUnitTest UP-TO-DATE
+> Task :assistant_feature:stripDebugDebugSymbols NO-SOURCE
+> Task :assistant_feature:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :assistant_feature:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :assistant_feature:prepareDebugArtProfile UP-TO-DATE
+> Task :assistant_feature:prepareLintJarForPublish UP-TO-DATE
+> Task :assistant_feature:preDebugAndroidTestBuild UP-TO-DATE
+> Task :assistant_feature:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :assistant_feature:writeDebugLintModelMetadata UP-TO-DATE
+> Task :assistant_feature:extractProguardFiles UP-TO-DATE
+> Task :model_client:preDebugAndroidTestBuild UP-TO-DATE
+> Task :model_client:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :model_client:generateDebugAndroidTestLintModel UP-TO-DATE
+> Task :model_client:generateDebugUnitTestLintModel UP-TO-DATE
+> Task :model_client:lintAnalyzeDebugAndroidTest UP-TO-DATE
+> Task :model_client:lintAnalyzeDebugUnitTest UP-TO-DATE
+> Task :sample_app:extractProguardFiles UP-TO-DATE
+> Task :sample_app:preDebugUnitTestBuild UP-TO-DATE
+> Task :model_client:preReleaseBuild UP-TO-DATE
+> Task :model_client:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :model_client:mergeReleaseNativeLibs NO-SOURCE
+> Task :model_client:stripReleaseDebugSymbols NO-SOURCE
+> Task :model_client:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :model_client:generateReleaseResValues UP-TO-DATE
+> Task :model_client:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :model_client:generateReleaseResources UP-TO-DATE
+> Task :model_client:packageReleaseResources UP-TO-DATE
+> Task :model_client:parseReleaseLocalResources UP-TO-DATE
+> Task :model_client:generateReleaseRFile UP-TO-DATE
+> Task :model_client:compileReleaseKotlin UP-TO-DATE
+> Task :model_client:extractReleaseAnnotations UP-TO-DATE
+> Task :model_client:javaPreCompileRelease UP-TO-DATE
+> Task :model_client:compileReleaseJavaWithJavac NO-SOURCE
+> Task :model_client:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :model_client:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :model_client:mergeReleaseShaders UP-TO-DATE
+> Task :model_client:compileReleaseShaders NO-SOURCE
+> Task :model_client:generateReleaseAssets UP-TO-DATE
+> Task :model_client:packageReleaseAssets UP-TO-DATE
+> Task :model_client:prepareReleaseArtProfile UP-TO-DATE
+> Task :model_client:processReleaseManifest UP-TO-DATE
+> Task :model_client:processReleaseJavaRes UP-TO-DATE
+> Task :model_client:mergeReleaseJavaResource UP-TO-DATE
+> Task :model_client:syncReleaseLibJars UP-TO-DATE
+> Task :model_client:writeReleaseAarMetadata UP-TO-DATE
+> Task :model_client:bundleReleaseAar UP-TO-DATE
+> Task :model_client:sourceReleaseJar UP-TO-DATE
+> Task :model_client:generateMetadataFileForReleasePublication
+> Task :model_client:generatePomFileForReleasePublication
+> Task :model_client:publishReleasePublicationToHandoffRepository
+> Task :model_client:publish
+> Task :integration:generateMetadataFileForJavaPublication
+> Task :integration:generatePomFileForJavaPublication
+> Task :integration:publishJavaPublicationToHandoffRepository
+> Task :integration:publish
+> Task :android_library:preReleaseBuild UP-TO-DATE
+> Task :android_library:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :android_library:mergeReleaseNativeLibs NO-SOURCE
+> Task :android_library:stripReleaseDebugSymbols NO-SOURCE
+> Task :android_library:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :android_library:generateReleaseResValues UP-TO-DATE
+> Task :android_library:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :android_library:generateReleaseResources UP-TO-DATE
+> Task :android_library:packageReleaseResources UP-TO-DATE
+> Task :android_library:parseReleaseLocalResources UP-TO-DATE
+> Task :android_library:generateReleaseRFile UP-TO-DATE
+> Task :model_client:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :android_library:compileReleaseKotlin UP-TO-DATE
+> Task :android_library:extractReleaseAnnotations UP-TO-DATE
+> Task :android_library:javaPreCompileRelease UP-TO-DATE
+> Task :android_library:compileReleaseJavaWithJavac NO-SOURCE
+> Task :android_library:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :android_library:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :android_library:mergeReleaseShaders UP-TO-DATE
+> Task :android_library:compileReleaseShaders NO-SOURCE
+> Task :android_library:generateReleaseAssets UP-TO-DATE
+> Task :android_library:packageReleaseAssets UP-TO-DATE
+> Task :android_library:prepareReleaseArtProfile UP-TO-DATE
+> Task :android_library:processReleaseManifest UP-TO-DATE
+> Task :android_library:processReleaseJavaRes UP-TO-DATE
+> Task :android_library:mergeReleaseJavaResource UP-TO-DATE
+> Task :android_library:syncReleaseLibJars UP-TO-DATE
+> Task :android_library:writeReleaseAarMetadata UP-TO-DATE
+> Task :android_library:bundleReleaseAar UP-TO-DATE
+> Task :android_library:sourceReleaseJar UP-TO-DATE
+> Task :android_library:generateMetadataFileForReleasePublication
+> Task :android_library:generatePomFileForReleasePublication
+> Task :android_library:publishReleasePublicationToHandoffRepository
+> Task :android_library:publish
+> Task :assistant_feature:preReleaseBuild UP-TO-DATE
+> Task :assistant_feature:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :assistant_feature:mergeReleaseNativeLibs NO-SOURCE
+> Task :assistant_feature:stripReleaseDebugSymbols NO-SOURCE
+> Task :assistant_feature:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :assistant_feature:generateReleaseResValues UP-TO-DATE
+> Task :assistant_feature:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :android_library:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :assistant_feature:generateReleaseResources UP-TO-DATE
+> Task :assistant_feature:packageReleaseResources UP-TO-DATE
+> Task :assistant_feature:parseReleaseLocalResources UP-TO-DATE
+> Task :assistant_feature:generateReleaseRFile UP-TO-DATE
+> Task :assistant_feature:javaPreCompileRelease UP-TO-DATE
+> Task :assistant_feature:mergeReleaseShaders UP-TO-DATE
+> Task :assistant_feature:compileReleaseShaders NO-SOURCE
+> Task :assistant_feature:generateReleaseAssets UP-TO-DATE
+> Task :assistant_feature:packageReleaseAssets UP-TO-DATE
+> Task :assistant_feature:prepareReleaseArtProfile UP-TO-DATE
+> Task :assistant_feature:processReleaseManifest UP-TO-DATE
+> Task :assistant_feature:writeReleaseAarMetadata UP-TO-DATE
+> Task :assistant_feature:sourceReleaseJar
+> Task :assistant_feature:generatePomFileForReleasePublication
+
+> Task :assistant_feature:compileDebugKotlin
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:80:159 'recycle(): Unit' is deprecated. Deprecated in Java
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:85:28 Parameter 'event' is never used
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:91:29 Parameter 'event' is never used
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:297:68 'recycle(): Unit' is deprecated. Deprecated in Java
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantFeature.kt:32:19 Parameter 'context' is never used
+
+> Task :assistant_feature:compileReleaseKotlin
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:80:159 'recycle(): Unit' is deprecated. Deprecated in Java
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:85:28 Parameter 'event' is never used
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:91:29 Parameter 'event' is never used
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt:297:68 'recycle(): Unit' is deprecated. Deprecated in Java
+w: file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/assistant_feature/src/main/java/com/bagent/assistant/AssistantFeature.kt:32:19 Parameter 'context' is never used
+
+> Task :assistant_feature:extractReleaseAnnotations
+> Task :assistant_feature:compileDebugJavaWithJavac NO-SOURCE
+> Task :assistant_feature:processDebugJavaRes UP-TO-DATE
+> Task :assistant_feature:extractDebugAnnotations
+> Task :assistant_feature:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :assistant_feature:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :assistant_feature:mergeDebugJavaResource UP-TO-DATE
+> Task :assistant_feature:bundleLibCompileToJarDebug
+> Task :assistant_feature:bundleLibRuntimeToJarDebug
+> Task :assistant_feature:bundleLibRuntimeToDirDebug
+> Task :assistant_feature:syncDebugLibJars
+> Task :assistant_feature:compileDebugUnitTestKotlin
+> Task :assistant_feature:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :assistant_feature:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :sample_app:compileDebugKotlin
+> Task :assistant_feature:testDebugUnitTest
+> Task :sample_app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :sample_app:dexBuilderDebug UP-TO-DATE
+> Task :sample_app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :sample_app:processDebugJavaRes UP-TO-DATE
+> Task :sample_app:mergeDebugJavaResource UP-TO-DATE
+> Task :sample_app:mergeProjectDexDebug UP-TO-DATE
+> Task :sample_app:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :sample_app:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :assistant_feature:bundleDebugLocalLintAar
+> Task :sample_app:mergeLibDexDebug
+> Task :assistant_feature:createFullJarDebug
+> Task :assistant_feature:generateDebugAndroidTestLintModel
+> Task :assistant_feature:generateDebugLintModel
+> Task :assistant_feature:generateDebugUnitTestLintModel
+> Task :sample_app:packageDebug
+> Task :sample_app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :sample_app:assembleDebug
+> Task :sample_app:generateDebugAndroidTestLintModel
+> Task :sample_app:generateDebugLintReportModel
+> Task :sample_app:generateDebugUnitTestLintModel
+> Task :assistant_feature:compileReleaseJavaWithJavac NO-SOURCE
+> Task :assistant_feature:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :assistant_feature:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :assistant_feature:processReleaseJavaRes UP-TO-DATE
+> Task :assistant_feature:mergeReleaseJavaResource UP-TO-DATE
+> Task :assistant_feature:syncReleaseLibJars
+> Task :assistant_feature:bundleReleaseAar
+> Task :assistant_feature:generateMetadataFileForReleasePublication
+> Task :assistant_feature:publishReleasePublicationToHandoffRepository
+> Task :assistant_feature:publish
+> Task :sample_app:compileDebugAndroidTestKotlin
+> Task :sample_app:compileDebugAndroidTestJavaWithJavac UP-TO-DATE
+> Task :sample_app:dexBuilderDebugAndroidTest UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :sample_app:processDebugAndroidTestJavaRes UP-TO-DATE
+> Task :sample_app:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :sample_app:mergeProjectDexDebugAndroidTest UP-TO-DATE
+> Task :sample_app:packageDebugAndroidTest UP-TO-DATE
+> Task :sample_app:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :sample_app:assembleDebugAndroidTest UP-TO-DATE
+> Task :assistant_feature:lintAnalyzeDebugAndroidTest
+> Task :assistant_feature:lintAnalyzeDebugUnitTest
+> Task :sample_app:lintAnalyzeDebugUnitTest
+> Task :sample_app:lintAnalyzeDebugAndroidTest
+> Task :assistant_feature:lintAnalyzeDebug
+> Task :sample_app:lintAnalyzeDebug
+
+> Task :sample_app:lintReportDebug
+Wrote HTML report to file:///C:/Users/20647/Documents/Codex/2026-10-25/ji-x/work/sdk-project/sample_app/build/reports/lint-results-debug.html
+
+> Task :sample_app:lintDebug
+
+BUILD SUCCESSFUL in 50s
+299 actionable tasks: 50 executed, 249 up-to-date

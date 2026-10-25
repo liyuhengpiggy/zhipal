@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bagent.integration.BAssistEngineTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-10-24T21:32:26" hostname="STEVENLI" time="0.208">
+  <properties/>
+  <testcase name="confirmationDispatchesExactlyOneThenStops" classname="com.bagent.integration.BAssistEngineTest" time="0.178"/>
+  <testcase name="realProgressPreventsRepeatedClickRule" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <testcase name="timeoutInvalidatesAndReleases" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <testcase name="pageChangeInvalidatesCandidate" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <testcase name="pagePingPongRequiresSixTransitions" classname="com.bagent.integration.BAssistEngineTest" time="0.0"/>
+  <testcase name="yesWithoutGoalCannotExecute" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <testcase name="aCancelsOutstandingModelAnalysis" classname="com.bagent.integration.BAssistEngineTest" time="0.005"/>
+  <testcase name="refusalNeverDispatches" classname="com.bagent.integration.BAssistEngineTest" time="0.003"/>
+  <testcase name="notThisAsksForClarificationAndNeverExecutes" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <testcase name="aPreemptsPendingPrompt" classname="com.bagent.integration.BAssistEngineTest" time="0.001"/>
+  <testcase name="repeatedClicksTriggerWithoutInferringGoal" classname="com.bagent.integration.BAssistEngineTest" time="0.001"/>
+  <testcase name="duplicatePromptCannotRepeatDispatch" classname="com.bagent.integration.BAssistEngineTest" time="0.003"/>
+  <testcase name="aCancelsConfirmationBeforeCoroutineStartsAndReleasesFrame" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <testcase name="readingAndWaitingNeverTrigger" classname="com.bagent.integration.BAssistEngineTest" time="0.001"/>
+  <testcase name="wrongTaskPromptSourceAndUnknownSpeechNeverDispatch" classname="com.bagent.integration.BAssistEngineTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

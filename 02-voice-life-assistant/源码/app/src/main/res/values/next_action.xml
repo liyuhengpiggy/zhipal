@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="next_action_accessibility_description">A/B 眼镜帮助：开启 B 并同意本次观察后，在手机比较页面截图；持续停留后将当前截图发到配置的 HTTPS 服务判断是否提供帮助。弹窗询问后，按眼镜 B 录音回答，结合当前截图显示建议。A 开始会清除 B 任务；后台打开应用或拨号也使用本服务。密码、支付、输入和锁屏等页面跳过。旧 AI 单步练习仍需单独启用，可能尝试一次安全导航操作。可在 A/B 配置中结束观察，或在系统中关闭本服务。</string>
+    <item name="next_action_practice_root" type="id" />
+    <item name="next_action_practice_next" type="id" />
+</resources>

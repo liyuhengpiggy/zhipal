@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.bagent",
+    "module": "integration",
+    "version": "1.3.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "integration-1.3.0.jar",
+          "url": "integration-1.3.0.jar",
+          "size": 37942,
+          "sha512": "c06781c3014095b474ea7056c6a9f2ab1a8b07998464aa093947dd42f9bdffe8ddfb94221e17d3c0c268f41a58178fea0a7ffbf5db0c76bc143f3be97fd28e60",
+          "sha256": "b5f16fb8985d1a50495bf314c5ad373c1f3258dec5f84f864528bca6368d721f",
+          "sha1": "3fe3de73e3fdf6afc3247f1d9f5a0ebfb83a4c4d",
+          "md5": "7ab87f9100c5acaf21735b64427b3487"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "integration-1.3.0.jar",
+          "url": "integration-1.3.0.jar",
+          "size": 37942,
+          "sha512": "c06781c3014095b474ea7056c6a9f2ab1a8b07998464aa093947dd42f9bdffe8ddfb94221e17d3c0c268f41a58178fea0a7ffbf5db0c76bc143f3be97fd28e60",
+          "sha256": "b5f16fb8985d1a50495bf314c5ad373c1f3258dec5f84f864528bca6368d721f",
+          "sha1": "3fe3de73e3fdf6afc3247f1d9f5a0ebfb83a4c4d",
+          "md5": "7ab87f9100c5acaf21735b64427b3487"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "integration-1.3.0-sources.jar",
+          "url": "integration-1.3.0-sources.jar",
+          "size": 5246,
+          "sha512": "2a3e5d99f5dc217689730661e12d189513f4a7976eedd991aadabcae2439d4f1d705a7030777ca2d7f5382e04b3a944dc60102d93efee75afdc65495e4723cd1",
+          "sha256": "e83f7219efcce820cf392be0207e44ae4f6969b87196427268891468d62a2dbc",
+          "sha1": "27a6d06e8f4b6af004996fd15e706893cc6fe118",
+          "md5": "75489abd9b8559368c0917c1e8f229c2"
+        }
+      ]
+    }
+  ]
+}

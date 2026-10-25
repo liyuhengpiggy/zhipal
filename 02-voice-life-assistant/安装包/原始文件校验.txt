@@ -1,0 +1,8 @@
+语音生活助手 0.8.0 / cn.seniorvoice.demo / versionCode 21
+生成时间：2026-10-25T01:54:01.5825868+08:00
+ca6d502bca72e659c52baacd0189552c1307aae6ad9671af81587d3908ab3ef1  语音生活助手_0.8.0_调试版.apk
+10eb6481d5ef0a1a11ae178cc8ca7127bae6823f70e0def1f388520c42b71f89  语音生活助手_0.8.0_Android完整源码.zip
+源码包：256 个文件及逐文件 SHA-256 清单，已逐项核验；不含私钥、SDK、缓存和本机配置。
+电脑验证：250 项 JVM、43 项 mock 浏览器检查通过；lint 0 errors / 47 warnings；APK 签名有效。
+本版未以真实手机、ESP32、Render 或真实模型完成验收；BLE/摄像头/TTS/华为后台等仍待实机。
+本版更新与八项验收：docs/0.8.0_更新与验收.md；A AI 部署：docs/0.8.0_服务端AI指令部署.md；构建方法见 docs/0.7.8_交付与构建.md（历史构建说明，版本及验证以本版证据为准）。

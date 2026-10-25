@@ -1,0 +1,75 @@
+{
+  "fixture": "synthetic screen, not a phone test; small sequential sample; latency depends on service/network",
+  "results": [
+    {
+      "stage": "optimized-1",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "seconds": 28.102,
+      "http": 200,
+      "output_tokens": 7,
+      "finish_reason": "stop",
+      "response": "{\"target_id\": 3}",
+      "estimated_utf8_body_bytes": 24834
+    },
+    {
+      "stage": "baseline-manager",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "seconds": 6.573,
+      "http": 200,
+      "output_tokens": 125,
+      "finish_reason": "stop",
+      "response": "### Thought ###\nThe current screen shows an incoming video call from \"Daughter\". The user has recently attempted to open the video call invitation, which suggests they are likely interested in accepting the call. The screen presents three options: [1] Back, [2] Decline, and [3] Join video. Given the context and the user’s prior action of opening the invitation, the most logical next step is to join the video call. This aligns with the user’s apparent intent to connect with their daughter.\n\n### Plan ###\n1. Click the \"Join video\" button to accept the incoming video call from Daughter.",
+      "estimated_utf8_body_bytes": 41121
+    },
+    {
+      "stage": "baseline-executor",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "seconds": 21.8,
+      "http": 200,
+      "output_tokens": 138,
+      "finish_reason": "stop",
+      "response": "### Thought ###\n根据当前屏幕内容，用户正在接收来自“Daughter”的视频邀请。当前子目标明确为“点击‘Join video’按钮以接受视频通话”。屏幕上的“Join video”按钮（坐标[790, 1340]）是执行该操作的正确目标。此按钮位于屏幕右下角，呈绿色，是典型的“接受”或“确认”按钮样式，符合用户接受视频通话的预期行为。\n\n### Action ###\n{\"action\": \"click\", \"coordinate\": [790, 1340]}\n\n### Description ###\n点击“Join video”按钮以接受女儿的视频通话邀请。",
+      "estimated_utf8_body_bytes": 43163
+    },
+    {
+      "stage": "optimized-2",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "seconds": 1.737,
+      "http": 200,
+      "output_tokens": 7,
+      "finish_reason": "stop",
+      "response": "{\"target_id\": 3}",
+      "estimated_utf8_body_bytes": 24834
+    },
+    {
+      "stage": "optimized-3",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "seconds": 3.554,
+      "http": 200,
+      "output_tokens": 7,
+      "finish_reason": "stop",
+      "response": "{\"target_id\": 3}",
+      "estimated_utf8_body_bytes": 24834
+    },
+    {
+      "stage": "optimized-fresh-1",
+      "fixture": "Directions ready",
+      "seconds": 4.833,
+      "http": 200,
+      "actual_request_bytes": 26368,
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "response": "{\"target_id\": 3}",
+      "output_tokens": 7
+    },
+    {
+      "stage": "optimized-fresh-2",
+      "fixture": "Blue backpack search",
+      "seconds": 1.574,
+      "http": 200,
+      "actual_request_bytes": 26897,
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "response": "{\"target_id\": 3}",
+      "output_tokens": 7
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "source_sha256": "33fceab953e72dbefa6e4bfb6c026381128ac5eff49a152303bcd5cfd78e9dd5",
+  "splits": {
+    "calibration": {
+      "count": 60,
+      "sha256": "e45e2d471a635d9f68aa2b70e8c62c83c79106d08388e1dd4aa91585b3dc75db"
+    },
+    "validation": {
+      "count": 120,
+      "sha256": "89debd6a24fb1e2dd075b0ff6089bfc89771f5ea875e50fc3a5ab6e09ddab482"
+    }
+  }
+}

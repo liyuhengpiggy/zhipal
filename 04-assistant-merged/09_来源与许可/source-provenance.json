@@ -1,0 +1,352 @@
+{
+  "date": "2026-10-25",
+  "archives": [
+    {
+      "path": "01_原始模型源码/b_agent_team_handoff.zip",
+      "sha256": "0bfca5c7e81a0231abf8f6c76e4875969d3f8cf15985dc0d7a564f073df43f77",
+      "bytes": 27672163
+    },
+    {
+      "path": "01_原始模型源码/智能助手项目交接.zip",
+      "sha256": "5c59a999a84cdb51b7b353f9d9a44ba4c2b014a680d9b6a13e8f1c71c9b7f039",
+      "bytes": 1994040
+    }
+  ],
+  "current_modules": [
+    {
+      "current": "model_client/build.gradle.kts",
+      "sha256": "fc60e44de3a0401261eebb9bbfd533d8c4ccdcb8d1013346bb50509f6bcbbf06",
+      "original_candidate": "android_library/build.gradle.kts",
+      "original_sha256": "263cb4e2904494988128d1bee0d38a8ceece41e98b6ad13270701001e52e8493",
+      "unchanged": false
+    },
+    {
+      "current": "model_client/consumer-rules.pro",
+      "sha256": "15ef9605365041e13161254f5ff7aba0a8da8f6cc7ce5eacb1fc6934d96e8981",
+      "original_candidate": "android_library/consumer-rules.pro",
+      "original_sha256": "bf63d5297a3ed143392c701c16840c8797900aaffd1e175628fe52a1d8393650",
+      "unchanged": false
+    },
+    {
+      "current": "model_client/src/main/AndroidManifest.xml",
+      "sha256": "eefa900f10279cdd1355eebed493982cb90b8f5d666787815a9537a7f6fb748b",
+      "original_candidate": "android_library/src/main/AndroidManifest.xml",
+      "original_sha256": "eefa900f10279cdd1355eebed493982cb90b8f5d666787815a9537a7f6fb748b",
+      "unchanged": true
+    },
+    {
+      "current": "model_client/src/main/java/com/mobileagent/app/api/ApiConfig.kt",
+      "sha256": "c0fc79305ec3603a8fec81e4af1e4bf5627e14218b15f8eb9d829743a4b30e41",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/api/ApiConfig.kt",
+      "original_sha256": "8815be8009d2a82e3587c7346f93dd8598318b4f2ee6c97a795c04d2b78a6d77",
+      "unchanged": false
+    },
+    {
+      "current": "model_client/src/main/java/com/mobileagent/app/api/ImageEncoder.kt",
+      "sha256": "66160f69d279a09abb2cefa906a7094b43667802f01f43fdc7b3582159965f45",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/api/ImageEncoder.kt",
+      "original_sha256": "40abbc20cf5b4dc278518fb2aa91e91d42609ee875e7c484d0be8251fc107545",
+      "unchanged": false
+    },
+    {
+      "current": "model_client/src/main/java/com/mobileagent/app/api/OpenAiCompatibleClient.kt",
+      "sha256": "87e977ab3ce78c5b67c7296ed0e7e369cb3dddfed7772532242e9f91624f3940",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/api/OpenAiCompatibleClient.kt",
+      "original_sha256": "46328c002a26075b73fd7b1d19a9fd25b662b65d17e5f012dce05ff7ec475fb5",
+      "unchanged": false
+    },
+    {
+      "current": "model_client/src/main/java/com/mobileagent/app/api/VlmApiClient.kt",
+      "sha256": "d16c755f78d47ff3ff560a90fc3c9ff59b8a54227b4d5836d011cf66111e2a4c",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/api/VlmApiClient.kt",
+      "original_sha256": "d16c755f78d47ff3ff560a90fc3c9ff59b8a54227b4d5836d011cf66111e2a4c",
+      "unchanged": true
+    },
+    {
+      "current": "model_client/src/test/java/com/mobileagent/app/api/LocalHttpFixture.kt",
+      "sha256": "88a287d96991f5998568d9d6f5286d58e3175c1f6931ee9630d71e8036284392",
+      "original_candidate": null
+    },
+    {
+      "current": "model_client/src/test/java/com/mobileagent/app/api/OpenAiCompatibleClientTest.kt",
+      "sha256": "153e8ad4a67f33567c3f88586142101834b5673d3489cc4759dd96b24e88cf7c",
+      "original_candidate": null
+    },
+    {
+      "current": "integration/build.gradle.kts",
+      "sha256": "0c24002867163bde8f11eb95fbd4de1191f24e6c0330717d45cdcd2fa9ef71c6",
+      "original_candidate": "integration/build.gradle.kts",
+      "original_sha256": "b1ec6db1ad6fd6a1ccd7a7a5740d2263508cdb82dd292e532c511f6e9ce117b1",
+      "unchanged": false
+    },
+    {
+      "current": "integration/src/main/kotlin/com/bagent/integration/BAssistEngine.kt",
+      "sha256": "5b775669a2a2a77a0d81debedfb53a878cf82231684446ffe03e078c6d18b44b",
+      "original_candidate": "integration/src/main/kotlin/com/bagent/integration/BAssistEngine.kt",
+      "original_sha256": "5b775669a2a2a77a0d81debedfb53a878cf82231684446ffe03e078c6d18b44b",
+      "unchanged": true
+    },
+    {
+      "current": "integration/src/main/kotlin/com/bagent/integration/Contracts.kt",
+      "sha256": "aff20bf27394bcda5ed11a733b530398521b31dc8026fcc72d2ebcec6105b812",
+      "original_candidate": "integration/src/main/kotlin/com/bagent/integration/Contracts.kt",
+      "original_sha256": "aff20bf27394bcda5ed11a733b530398521b31dc8026fcc72d2ebcec6105b812",
+      "unchanged": true
+    },
+    {
+      "current": "integration/src/main/kotlin/com/bagent/integration/DifficultyDetector.kt",
+      "sha256": "5ff306b655150a7a3bdc33653ba9de4f8e77f2ecbff7db1f145d3717e9249577",
+      "original_candidate": "integration/src/main/kotlin/com/bagent/integration/DifficultyDetector.kt",
+      "original_sha256": "5ff306b655150a7a3bdc33653ba9de4f8e77f2ecbff7db1f145d3717e9249577",
+      "unchanged": true
+    },
+    {
+      "current": "integration/src/test/kotlin/com/bagent/integration/BAssistEngineTest.kt",
+      "sha256": "2ea3636922aae02bbed828a7033b56b9b3f24c46f18332518ff02e7c89d6340a",
+      "original_candidate": "integration/src/test/kotlin/com/bagent/integration/BAssistEngineTest.kt",
+      "original_sha256": "2ea3636922aae02bbed828a7033b56b9b3f24c46f18332518ff02e7c89d6340a",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/build.gradle.kts",
+      "sha256": "a47a9c9b4efa7c177f93800a394decd435606535267a7d5060438d41688171ab",
+      "original_candidate": "android_library/build.gradle.kts",
+      "original_sha256": "263cb4e2904494988128d1bee0d38a8ceece41e98b6ad13270701001e52e8493",
+      "unchanged": false
+    },
+    {
+      "current": "android_library/consumer-rules.pro",
+      "sha256": "bf63d5297a3ed143392c701c16840c8797900aaffd1e175628fe52a1d8393650",
+      "original_candidate": "android_library/consumer-rules.pro",
+      "original_sha256": "bf63d5297a3ed143392c701c16840c8797900aaffd1e175628fe52a1d8393650",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/AndroidManifest.xml",
+      "sha256": "eefa900f10279cdd1355eebed493982cb90b8f5d666787815a9537a7f6fb748b",
+      "original_candidate": "android_library/src/main/AndroidManifest.xml",
+      "original_sha256": "eefa900f10279cdd1355eebed493982cb90b8f5d666787815a9537a7f6fb748b",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/bagent/android/AndroidAssistPort.kt",
+      "sha256": "4a26f288b947b6198d9c2ca17db51d9b25cf195033b4a5df2acfbff4854fbfac",
+      "original_candidate": "android_library/src/main/java/com/bagent/android/AndroidAssistPort.kt",
+      "original_sha256": "005c226f3cb892e91d53fc5e394022fe0e4a537a20013e00fa5872aec3007ee4",
+      "unchanged": false
+    },
+    {
+      "current": "android_library/src/main/java/com/bagent/android/BAssist.kt",
+      "sha256": "d36adb051f2327852c314f3a9b00238fe3a8a8c3fa3ce7b608899f468151458c",
+      "original_candidate": "android_library/src/main/java/com/bagent/android/BAssist.kt",
+      "original_sha256": "d36adb051f2327852c314f3a9b00238fe3a8a8c3fa3ce7b608899f468151458c",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/bagent/android/ExecutionGuard.kt",
+      "sha256": "4eea47621eac13ac28d36ead61b0db75d23c420ed53b9a8c4b62090288cb3530",
+      "original_candidate": null
+    },
+    {
+      "current": "android_library/src/main/java/com/bagent/android/SingleClickProtocol.kt",
+      "sha256": "b6a8d2e956593864add44e5434f80bf4d7e1ca604c48d619e8d5a08a67e8afe0",
+      "original_candidate": null
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/ActionReflector.kt",
+      "sha256": "8db4ba4d1ffb8a4681a690cc45710f6766a7068dba19b9adca2850271702c91c",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/ActionReflector.kt",
+      "original_sha256": "8db4ba4d1ffb8a4681a690cc45710f6766a7068dba19b9adca2850271702c91c",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/AgentAction.kt",
+      "sha256": "65fca5c2cfc09a15b6872162cedc89320b5d4dfae421ccbfefd3d95bbfefa71f",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/AgentAction.kt",
+      "original_sha256": "65fca5c2cfc09a15b6872162cedc89320b5d4dfae421ccbfefd3d95bbfefa71f",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/BaseAgent.kt",
+      "sha256": "9402b5be4ff719b9fa6bc1624f5dd1febd0933835bfceca94a1ec42cc6d16cd1",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/BaseAgent.kt",
+      "original_sha256": "9402b5be4ff719b9fa6bc1624f5dd1febd0933835bfceca94a1ec42cc6d16cd1",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/Executor.kt",
+      "sha256": "ce3001851ae3ad48e3f08b680d95853253916f92d9e9da733c49977a5b2f65de",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/Executor.kt",
+      "original_sha256": "ce3001851ae3ad48e3f08b680d95853253916f92d9e9da733c49977a5b2f65de",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/InfoPool.kt",
+      "sha256": "4a628473e5578ed134287f314291b44a3055d526af93853433b5eaa8cbcede5c",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/InfoPool.kt",
+      "original_sha256": "4a628473e5578ed134287f314291b44a3055d526af93853433b5eaa8cbcede5c",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/Manager.kt",
+      "sha256": "1a8995f06806e4484cf5107805351efd570ca50b31030c29dec83ba0b501795d",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/Manager.kt",
+      "original_sha256": "1a8995f06806e4484cf5107805351efd570ca50b31030c29dec83ba0b501795d",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/agent/PromptConstants.kt",
+      "sha256": "73e1f7cb8e5c9950c13cf1faf47ffe8e01bf0725a0016b809380e9d40cc209f3",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/agent/PromptConstants.kt",
+      "original_sha256": "73e1f7cb8e5c9950c13cf1faf47ffe8e01bf0725a0016b809380e9d40cc209f3",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/controller/AccessibilityActions.kt",
+      "sha256": "3ed6746069b58ea70f18b6585d4251fe67d6109200880d93c956f62ef438ea74",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/controller/AccessibilityActions.kt",
+      "original_sha256": "3ed6746069b58ea70f18b6585d4251fe67d6109200880d93c956f62ef438ea74",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/controller/ApplicationWindowPolicy.kt",
+      "sha256": "ce7eb366808de843890e00f7f3ff12d10929d23db9691a8bba0b30e6470150ad",
+      "original_candidate": null
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/controller/AppWindowResolver.kt",
+      "sha256": "14946d9881a6298b70da81ad43a2dd598db2bbc44b2c8e002057dc7ea53773b6",
+      "original_candidate": null
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/controller/DeviceController.kt",
+      "sha256": "370d37be7da49c77b080294095365a9d97bfd2262d99c798537ad071f6fe9572",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/controller/DeviceController.kt",
+      "original_sha256": "370d37be7da49c77b080294095365a9d97bfd2262d99c798537ad071f6fe9572",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/controller/ScreenCaptureManager.kt",
+      "sha256": "64c089579fb93ab3200ed146acd2b37a28800ed675007199628635ac73aedbef",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/controller/ScreenCaptureManager.kt",
+      "original_sha256": "665e71188c198ae760fae9afad685c409b4a48ae93037f48048daa88450bd0a9",
+      "unchanged": false
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/controller/UiElementDetector.kt",
+      "sha256": "a0d7ed809b5881427a0b1db988b47c6b5c9248b560e8e796f59164f46473fb1e",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/controller/UiElementDetector.kt",
+      "original_sha256": "2945d61b9ad8fad596eebe24880dec5bbcc71915de616f9832137777e16ba9c3",
+      "unchanged": false
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/util/CoordinateConverter.kt",
+      "sha256": "b88cd8a9d6406ec8a1bb34557323e518dc5816e081e41e12ff72be8653f6c197",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/util/CoordinateConverter.kt",
+      "original_sha256": "b88cd8a9d6406ec8a1bb34557323e518dc5816e081e41e12ff72be8653f6c197",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/main/java/com/mobileagent/app/util/JsonActionParser.kt",
+      "sha256": "3e7b55d85d567d0d1f5133fbd934217535f7d7364e8715d024deb599176c39a1",
+      "original_candidate": "android_library/src/main/java/com/mobileagent/app/util/JsonActionParser.kt",
+      "original_sha256": "3e7b55d85d567d0d1f5133fbd934217535f7d7364e8715d024deb599176c39a1",
+      "unchanged": true
+    },
+    {
+      "current": "android_library/src/test/java/com/bagent/android/ExecutionGuardTest.kt",
+      "sha256": "54a71a8ccd0d73e072113894f028e90821bc3e148cf1c067824b170154965b9f",
+      "original_candidate": null
+    },
+    {
+      "current": "android_library/src/test/java/com/bagent/android/SingleClickProtocolTest.kt",
+      "sha256": "b6e0c021f43fd0ab826df7c5f5dd2976bba59cd98e794fd8df6a861bf3d3b4a3",
+      "original_candidate": null
+    },
+    {
+      "current": "android_library/src/test/java/com/mobileagent/app/controller/ApplicationWindowPolicyTest.kt",
+      "sha256": "bca283f8208170a8c51ce4987f5d7375913a3e649cf9bf56f5d9d3e2b2c17564",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/build.gradle.kts",
+      "sha256": "bf302084a0a90968e5a3c671a40d83f3ddf874fc25566e53c88b04a199ab176a",
+      "original_candidate": "sample_app/build.gradle.kts",
+      "original_sha256": "517ba4de7357027a6be515aeb2efa77644544da044dbf8de5aa85b2c22655455",
+      "unchanged": false
+    },
+    {
+      "current": "assistant_feature/consumer-rules.pro",
+      "sha256": "19fdc21df8423f4fa7d2bfa1377aa949866b719e6a3404856af16568a8479548",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/AndroidManifest.xml",
+      "sha256": "c804cec1020434e238b1d2fdb2406ef4523c5c93b4286515c42bd4ed9e6c80ac",
+      "original_candidate": "sample_app/src/main/AndroidManifest.xml",
+      "original_sha256": "12593ffbd2bcbd3d9b69b4305256c98569296a5dc2148fd89ce9cbe01295ced8",
+      "unchanged": false
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/AssistantAccessService.kt",
+      "sha256": "e2f5f8265b17d240ceeba168e531ee1686dfe5527503584e69dd20cb3d589cd7",
+      "original_candidate": "sample_app/src/main/java/com/bagent/sample/SampleAccessService.kt",
+      "original_sha256": "767aac3a59e83f43e47d9e6243e0610e6a67e59250ab1c6b99cdcd8221d2eb68",
+      "unchanged": false
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/AssistantFeature.kt",
+      "sha256": "74e557657056fbf6b3000c5f74e49161935f44c7b8985dcc6900ae44a26372e9",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/AssistantSetupActivity.kt",
+      "sha256": "9079fe4c25a20c4fc4981e1c093beec30170db68cbfc7c8445af9edd85e3176e",
+      "original_candidate": "sample_app/src/main/java/com/bagent/sample/MainActivity.kt",
+      "original_sha256": "0b4ceecb08e70e3b4322b849547912fec251f4fc6e2179a905c8937ff37c7574",
+      "unchanged": false
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/ConfirmationPolicy.kt",
+      "sha256": "92a28b0c7901dbe5d4da4fa02a88b93f60bdd6b5d8c51e99610f830e0d7491c7",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/ConfirmDialogActivity.kt",
+      "sha256": "b5a97b56b4afeac13dbda62474e7e0e2b6bb72ce4f584f2527ac012bdd8b8645",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/ErrorDialogActivity.kt",
+      "sha256": "2ffb2e124957a1a9efd501d8ba90b636d1628e7ad49b3b7bdec41af975ec7614",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/FloatingIconManager.kt",
+      "sha256": "233f2fa796ff4ead6e8d8024ffde4ddbcdcad25e4fa5db33cd771699ce90566e",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/FloatingPanelManager.kt",
+      "sha256": "6a7d80c4ddfa80598ffa7785d364862cb69741a0b0717a59586773c5afe163f0",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/java/com/bagent/assistant/FloatingService.kt",
+      "sha256": "519696ef62c3703e5de2a93c0ab8c0c312f58223112a079d157155516a69f04f",
+      "original_candidate": null
+    },
+    {
+      "current": "assistant_feature/src/main/res/xml/bagent_accessibility_service.xml",
+      "sha256": "01fd6af11fe3ce041e92ed3a01cfb0cc3b67db8a48dae061c099579b981a3b10",
+      "original_candidate": "sample_app/src/main/res/xml/accessibility_service.xml",
+      "original_sha256": "7e9e7c4609537300f7042edfaf8b1c1369c0db9371e0b678d032407ee4280f64",
+      "unchanged": false
+    },
+    {
+      "current": "assistant_feature/src/test/java/com/bagent/assistant/ConfirmationPolicyTest.kt",
+      "sha256": "5b51a9f8972a62effbcb6e6e63027c413901a1e9129d0a78f8bb2a2f1fa86447",
+      "original_candidate": null
+    }
+  ]
+}

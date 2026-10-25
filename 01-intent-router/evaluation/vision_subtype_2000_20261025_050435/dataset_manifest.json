@@ -1,0 +1,24 @@
+{
+  "synthetic": true,
+  "seed": 2026102503,
+  "count": 2000,
+  "dataset_sha256": "e30cd1885756d309309f204fecdf6c74ce188d42e6174d1d69bca8e468ed4a67",
+  "class_counts": {
+    "clarify": 600,
+    "phone_action": 700,
+    "vision": 700
+  },
+  "vision_task_counts": {
+    "recognize_environment": 250,
+    "recognize_object": 200,
+    "read_text": 250
+  },
+  "prior_normalized_overlap": 0,
+  "excluded_unique_texts": 8284,
+  "label_policy": {
+    "read_text": "实体文字读取",
+    "recognize_object": "实体物体识别",
+    "recognize_environment": "周围场景/环境识别"
+  },
+  "limitations": "新模板合成数据，期望标签按任务定义预先生成，未使用预测结果；不能代表真实语音或生产准确率。视觉三类样本数量按可生成的去重组合分配。"
+}

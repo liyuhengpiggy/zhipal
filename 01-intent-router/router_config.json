@@ -1,0 +1,16 @@
+{
+  "threshold": 0.45,
+  "margin": 0.06,
+  "vision_task_threshold": 0.45,
+  "vision_task_margin": 0.04,
+  "status": "calibrated_v2",
+  "calibration_count": 60,
+  "calibration_sha256": "e45e2d471a635d9f68aa2b70e8c62c83c79106d08388e1dd4aa91585b3dc75db",
+  "selection": {
+    "threshold": 0.45,
+    "margin": 0.06,
+    "semantic_correct": 45,
+    "hybrid_correct": 60,
+    "hybrid_false_dispatch": 0
+  }
+}

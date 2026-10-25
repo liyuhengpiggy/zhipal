@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bagent.assistant.ConfirmationPolicyTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-24T21:35:18" hostname="STEVENLI" time="0.006">
+  <properties/>
+  <testcase name="rejectsStaleConfirmation" classname="com.bagent.assistant.ConfirmationPolicyTest" time="0.005"/>
+  <testcase name="rejectsClockRollbackOrDifferentBoot" classname="com.bagent.assistant.ConfirmationPolicyTest" time="0.0"/>
+  <testcase name="acceptsImmediatelyAndAtExpiryBoundary" classname="com.bagent.assistant.ConfirmationPolicyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,72 @@
+{
+  "upstream_model": "BAAI/bge-small-zh-v1.5",
+  "download_mirror": "AI-ModelScope/bge-small-zh-v1.5",
+  "files": [
+    {
+      "Path": "1_Pooling/config.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 190,
+      "Sha256": "aaa8861589f80c961a03cc86c7eeaef7605c1676b9ab55329d33a304738769c6"
+    },
+    {
+      "Path": "README.md",
+      "Revision": "29ee8f619cff1eb2efae93ff802e01a877212d16",
+      "Size": 28112,
+      "Sha256": "f271bdf5e1acc00295c8806b2c9369168282f5a2a582e32e8e1f186dc92f7b55"
+    },
+    {
+      "Path": "config.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 776,
+      "Sha256": "3853a7979202c348751b753e36f579c41d8da7d36af617d3d907e1fc9b441f2a"
+    },
+    {
+      "Path": "config_sentence_transformers.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 124,
+      "Sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56"
+    },
+    {
+      "Path": "model.safetensors",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 95827648,
+      "Sha256": "354763b9b1357bc9c44f62c6be2276321081ed2567773608c0d0785b61d5a026"
+    },
+    {
+      "Path": "modules.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 349,
+      "Sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+    },
+    {
+      "Path": "sentence_bert_config.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 52,
+      "Sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf"
+    },
+    {
+      "Path": "special_tokens_map.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 125,
+      "Sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+    },
+    {
+      "Path": "tokenizer.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 439125,
+      "Sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"
+    },
+    {
+      "Path": "tokenizer_config.json",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 367,
+      "Sha256": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a"
+    },
+    {
+      "Path": "vocab.txt",
+      "Revision": "b7b841ce366cce9454e10934fd8ad91dd4e5913d",
+      "Size": 109540,
+      "Sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+    }
+  ]
+}

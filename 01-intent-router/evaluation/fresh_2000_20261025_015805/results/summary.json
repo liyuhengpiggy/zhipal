@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-10-25T01:58:13.278278+08:00",
+  "finished_at": "2026-10-25T01:58:31.701848+08:00",
+  "synthetic": true,
+  "total": 2000,
+  "correct": 1869,
+  "incorrect": 131,
+  "accuracy": 0.9345,
+  "per_class": {
+    "vision": {
+      "count": 700,
+      "correct": 682,
+      "precision": 0.963276836158192,
+      "recall": 0.9742857142857143,
+      "f1": 0.96875
+    },
+    "phone_action": {
+      "count": 700,
+      "correct": 659,
+      "precision": 0.9307909604519774,
+      "recall": 0.9414285714285714,
+      "f1": 0.9360795454545454
+    },
+    "clarify": {
+      "count": 600,
+      "correct": 528,
+      "precision": 0.9041095890410958,
+      "recall": 0.88,
+      "f1": 0.8918918918918919
+    }
+  },
+  "confusion_matrix_expected_rows_predicted_columns": {
+    "vision": {
+      "vision": 682,
+      "phone_action": 0,
+      "clarify": 18,
+      "http_error": 0
+    },
+    "phone_action": {
+      "vision": 3,
+      "phone_action": 659,
+      "clarify": 38,
+      "http_error": 0
+    },
+    "clarify": {
+      "vision": 23,
+      "phone_action": 49,
+      "clarify": 528,
+      "http_error": 0
+    }
+  },
+  "latency_ms": {
+    "mean": 9.035110349184833,
+    "median": 8.87790007982403,
+    "p95": 10.601599933579564
+  },
+  "duration_seconds": 18.42377629992552,
+  "http_errors": 0,
+  "prediction_counts": {
+    "phone_action": 708,
+    "vision": 708,
+    "clarify": 584
+  },
+  "decision_sources": {
+    "structure": 1509,
+    "semantic": 491
+  },
+  "error_reason_counts": {
+    "small_margin": 33,
+    "explicit_phone_task": 42,
+    "semantic_match": 22,
+    "mixed_module_request": 20,
+    "explicit_visual_text_task": 11,
+    "matches_clarification_examples": 3
+  },
+  "false_dispatch_on_clarify": 72,
+  "dataset": "D:\\Codex\\AI创作大赛\\intent-router\\evaluation\\fresh_2000_20261025_015805\\inputs_2000.jsonl",
+  "dataset_sha256": "1771a40ecc383486f01170f5e485f88562dedc02dd7a12f305fee9ee154c107c",
+  "service": {
+    "status": "ready",
+    "policy_version": "hybrid-v2.1",
+    "threshold": 0.45,
+    "margin": 0.06
+  },
+  "base_url": "http://127.0.0.1:8010",
+  "code_hashes": {
+    "router.py": "8df65cbf90ca350f5dca18815d01fb455bf716f1d68f5ce113dbcce708adf771",
+    "intent_policy.py": "dc0c0b110e56784eb4319820dde83585b080bce3ffca49ee71a52be6e5aae613",
+    "routes.json": "3e3534f653b2b0ffdb364ace23c62aea0f88c086a5c756f8c1f274aa44007797",
+    "router_config.json": "ea7679aade2d746b3bf85b4734a7ce88519d6be1fb9d43184c91d4fb2b9f2d5d",
+    "app.py": "135f264a1403b8d649e3f86da99c4cfbfc20c2efbac85b9c6be5da06f174bd34",
+    "server.py": "7c05d1a22cf003e33ae024d57d42af9e8addec138a77f7b0dfeba59e12dd3b5b"
+  },
+  "limitations": "合成测试，不能代表真实语音识别或生产准确率。数据生成方式、去重及冻结信息见对应数据集的 manifest。原2000条与已查看结果的120条均属于已见数据；新生成数据若用于后续调参，也不再属于未见测试。模板和语义相关性会限制代表性。"
+}

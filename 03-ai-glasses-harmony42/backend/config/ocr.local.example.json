@@ -1,0 +1,10 @@
+{
+  "host": "0.0.0.0",
+  "port": 8001,
+  "api_token": "",
+  "data_dir": "medicine-vision/local_vision_data",
+  "inference_timeout": 120,
+  "startup_timeout": 180,
+  "waiting_timeout": 600,
+  "cors_origins": []
+}

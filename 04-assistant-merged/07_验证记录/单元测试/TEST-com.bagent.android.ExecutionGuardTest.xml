@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bagent.android.ExecutionGuardTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-24T21:32:49" hostname="STEVENLI" time="0.091">
+  <properties/>
+  <testcase name="rejectsLargeMovementOrScroll" classname="com.bagent.android.ExecutionGuardTest" time="0.05"/>
+  <testcase name="allowsSmallTargetLayoutJitter" classname="com.bagent.android.ExecutionGuardTest" time="0.031"/>
+  <testcase name="rejectsMissingTarget" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <testcase name="rejectsChangedToggleState" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <testcase name="rejectsDuplicateAmbiguousTargets" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <testcase name="rejectsDifferentApplication" classname="com.bagent.android.ExecutionGuardTest" time="0.0"/>
+  <testcase name="rejectsPasswordTarget" classname="com.bagent.android.ExecutionGuardTest" time="0.002"/>
+  <testcase name="rejectsTargetTextOrIdentityChange" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <testcase name="ignoresTreeOrderAndClockTick" classname="com.bagent.android.ExecutionGuardTest" time="0.0"/>
+  <testcase name="ignoresUnlabelledLayoutAndUnrelatedEnabledState" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <testcase name="rejectsDisabledTarget" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <testcase name="rejectsDifferentPageWithSameActionButton" classname="com.bagent.android.ExecutionGuardTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

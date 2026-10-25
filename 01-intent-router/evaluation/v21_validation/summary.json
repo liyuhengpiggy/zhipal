@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-25T01:52:58.076253+08:00",
+  "finished_at": "2026-10-25T01:52:59.280521+08:00",
+  "synthetic": true,
+  "total": 120,
+  "correct": 117,
+  "incorrect": 3,
+  "accuracy": 0.975,
+  "per_class": {
+    "vision": {
+      "count": 40,
+      "correct": 39,
+      "precision": 1.0,
+      "recall": 0.975,
+      "f1": 0.9873417721518987
+    },
+    "phone_action": {
+      "count": 40,
+      "correct": 38,
+      "precision": 1.0,
+      "recall": 0.95,
+      "f1": 0.9743589743589743
+    },
+    "clarify": {
+      "count": 40,
+      "correct": 40,
+      "precision": 0.9302325581395349,
+      "recall": 1.0,
+      "f1": 0.963855421686747
+    }
+  },
+  "confusion_matrix_expected_rows_predicted_columns": {
+    "vision": {
+      "vision": 39,
+      "phone_action": 0,
+      "clarify": 1,
+      "http_error": 0
+    },
+    "phone_action": {
+      "vision": 0,
+      "phone_action": 38,
+      "clarify": 2,
+      "http_error": 0
+    },
+    "clarify": {
+      "vision": 0,
+      "phone_action": 0,
+      "clarify": 40,
+      "http_error": 0
+    }
+  },
+  "latency_ms": {
+    "mean": 8.18575250353509,
+    "median": 8.048299932852387,
+    "p95": 9.581199963577092
+  },
+  "duration_seconds": 1.204206799971871,
+  "http_errors": 0,
+  "prediction_counts": {
+    "vision": 39,
+    "clarify": 43,
+    "phone_action": 38
+  },
+  "decision_sources": {
+    "structure": 107,
+    "semantic": 13
+  },
+  "error_reason_counts": {
+    "small_margin": 3
+  },
+  "false_dispatch_on_clarify": 0,
+  "dataset": "D:\\Codex\\AI创作大赛\\intent-router\\evaluation\\validation.jsonl",
+  "dataset_sha256": "89debd6a24fb1e2dd075b0ff6089bfc89771f5ea875e50fc3a5ab6e09ddab482",
+  "service": {
+    "status": "ready",
+    "policy_version": "hybrid-v2.1",
+    "threshold": 0.45,
+    "margin": 0.06
+  },
+  "base_url": "http://127.0.0.1:8010",
+  "code_hashes": {
+    "router.py": "8df65cbf90ca350f5dca18815d01fb455bf716f1d68f5ce113dbcce708adf771",
+    "intent_policy.py": "dc0c0b110e56784eb4319820dde83585b080bce3ffca49ee71a52be6e5aae613",
+    "routes.json": "3e3534f653b2b0ffdb364ace23c62aea0f88c086a5c756f8c1f274aa44007797",
+    "router_config.json": "ea7679aade2d746b3bf85b4734a7ce88519d6be1fb9d43184c91d4fb2b9f2d5d",
+    "app.py": "135f264a1403b8d649e3f86da99c4cfbfc20c2efbac85b9c6be5da06f174bd34",
+    "server.py": "7c05d1a22cf003e33ae024d57d42af9e8addec138a77f7b0dfeba59e12dd3b5b"
+  },
+  "limitations": "合成测试。原2000条是已见错误的回归集；新增120条未参与阈值校准，v2首测后已查看错误，v2.1结果是复测，不再属于未见验证。所有数据均不能代表生产准确率。"
+}

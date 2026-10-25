@@ -1,0 +1,8 @@
+{
+  "name": "b-agent-siliconflow-proxy",
+  "version": "0.8.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.mjs", "test": "node --test --test-isolation=none test.mjs command.test.mjs" }
+}

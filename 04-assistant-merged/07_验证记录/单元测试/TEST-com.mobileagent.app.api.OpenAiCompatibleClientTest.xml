@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mobileagent.app.api.OpenAiCompatibleClientTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-24T21:32:28" hostname="STEVENLI" time="1.307">
+  <properties/>
+  <testcase name="truncatedOutputDoesNotBecomeAProposalOrRetry" classname="com.mobileagent.app.api.OpenAiCompatibleClientTest" time="0.278"/>
+  <testcase name="sendsShortRequestAndRecordsResponseMetrics" classname="com.mobileagent.app.api.OpenAiCompatibleClientTest" time="0.009"/>
+  <testcase name="transientServerErrorRetriesSameRequestOnce" classname="com.mobileagent.app.api.OpenAiCompatibleClientTest" time="1.014"/>
+  <testcase name="forbiddenDoesNotRetryOrExposeKey" classname="com.mobileagent.app.api.OpenAiCompatibleClientTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

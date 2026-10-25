@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "seed": 20261025,
+  "count": 2000,
+  "class_counts": {
+    "phone_action": 700,
+    "vision": 700,
+    "clarify": 600
+  },
+  "category_counts": {
+    "phone_settings": 140,
+    "visual_field": 200,
+    "clarify_negation": 120,
+    "phone_message": 140,
+    "phone_launch": 140,
+    "clarify_out_of_scope": 120,
+    "visual_read": 300,
+    "phone_tools": 140,
+    "phone_ui": 140,
+    "clarify_mixed": 120,
+    "clarify_ambiguous": 120,
+    "visual_colloquial": 100,
+    "clarify_screen_reading": 120,
+    "visual_camera_context": 100
+  },
+  "dataset_sha256": "aa0a1a5072848e6a58eab83a43d1a1931b39af1c953769ec67c5360ea5575159",
+  "prototype_overlap_exact": 0,
+  "label_policy": {
+    "vision": "摄像头前实物的文字读取",
+    "phone_action": "单一手机应用或界面操作",
+    "clarify": "含糊、否定、多步混合、无关输入、当前未支持的手机屏幕读字"
+  },
+  "limitations": "固定模板组合的合成测试；不是实际用户记录；语义与示例可能相近；不能代表真实语音转写准确率。测试标签由任务定义生成，未使用模型预测。"
+}

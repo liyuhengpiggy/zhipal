@@ -1,0 +1,84 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+Unable to initialize metrics, ensure C:\Users\Lenovo\.android is writable, details: C:\Users\Lenovo\.android\analytics.settings (�ܾ����ʡ�)
+WARNING: The option setting 'android.overridePathCheck=true' is experimental.
+The current default is 'false'.
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:compileDebugKotlin
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/HomeActivity.kt:885:59 'fun onBackPressed(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/VisualDemoActivity.kt:95:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/setup/PermissionSetupActivity.kt:55:16 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/setup/PermissionSetupActivity.kt:56:16 'var navigationBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/setup/PermissionSetupActivity.kt:57:26 'var systemUiVisibility: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/setup/PermissionSetupActivity.kt:57:52 'static field SYSTEM_UI_FLAG_LIGHT_STATUS_BAR: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/cn/seniorvoice/demo/setup/PermissionSetupActivity.kt:57:92 'static field SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/com/bagent/android/AndroidAssistPort.kt:114:84 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/com/bagent/android/BAssist.kt:39:159 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/com/mobileagent/app/controller/UiElementDetector.kt:28:24 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/Documents/ChatGPT/������/app/src/main/java/com/mobileagent/app/controller/UiElementDetector.kt:130:29 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:mergeProjectDexDebug
+> Task :app:compileDebugUnitTestKotlin UP-TO-DATE
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+
+> Task :app:lintAnalyzeDebugAndroidTest
+Warning: Unable to initialize metrics, ensure C:\Users\Lenovo\.android is writable, details: C:\Users\Lenovo\.android\analytics.settings (�ܾ����ʡ�)
+
+> Task :app:lintAnalyzeDebug
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:lintReportDebug UP-TO-DATE
+> Task :app:lintDebug
+
+BUILD SUCCESSFUL in 1m 51s
+49 actionable tasks: 12 executed, 37 up-to-date

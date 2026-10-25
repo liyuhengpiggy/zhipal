@@ -1,0 +1,54 @@
+# ---- 环境与密钥 ----
+.env
+.env.*
+!.env.example
+*.local.json
+!*.local.example.json
+ocr.local.json
+*.keystore
+*.jks
+*.pem
+*.key
+key.properties
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ---- Android / Gradle ----
+.gradle/
+build/
+local.properties
+*.apk
+*.aab
+*.ap_
+captures/
+.cxx/
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ---- 大二进制 / 模型权重 ----
+*.safetensors
+*.onnx
+*.bin
+*.pt
+*.pth
+
+# ---- IDE / OS ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 归档辅助文件 ----
+# (none)

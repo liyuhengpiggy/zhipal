@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>语音生活助手 · 完整测试版</title>
+  <style>
+    :root {
+      --bg: #edf2ef;
+      --surface: #ffffff;
+      --surface-soft: #f6f9f7;
+      --ink: #1d2b25;
+      --muted: #6d7e75;
+      --line: #dbe5df;
+      --green: #1e7352;
+      --green-dark: #14543b;
+      --green-soft: #e1f0e8;
+      --blue: #3e698a;
+      --blue-soft: #e6f0f7;
+      --amber: #a46b1f;
+      --amber-soft: #fff1d9;
+      --coral: #bd5d48;
+      --coral-soft: #fbe9e5;
+      --shadow: 0 22px 55px rgba(28, 53, 42, .12);
+      --small-shadow: 0 7px 22px rgba(28, 53, 42, .08);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, input:focus-visible { outline: 2px solid #8ac9a2; outline-offset: 2px; }
+    .demo-shell { min-height: 100vh; display: grid; grid-template-columns: 280px minmax(0, 1fr); }
+    .demo-sidebar {
+      display: flex; flex-direction: column; gap: 20px; padding: 25px 18px;
+      background: #19362c; color: #edf7f0; min-height: 100vh;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; padding: 4px 8px; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #a8ddbd; color: #163d2b; font-weight: 700; }
+    .brand strong { display: block; font-size: 17px; font-weight: 600; }
+    .brand small { display: block; margin-top: 2px; color: #b9d0c2; font-size: 12px; }
+    .side-label { margin: 0 8px 7px; color: #9db9a8; font-size: 12px; letter-spacing: .08em; }
+    .mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding: 5px; border: 1px solid #3b5e50; border-radius: 12px; background: #23483a; }
+    .mode-switch button { min-height: 38px; border: 0; border-radius: 8px; color: #b9d0c2; background: transparent; }
+    .mode-switch button.active { background: #a8ddbd; color: #153d2b; font-weight: 600; }
+    .side-nav { display: grid; gap: 5px; }
+    .side-nav button { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 43px; padding: 9px 12px; text-align: left; border: 0; border-radius: 10px; color: #c7dbce; background: transparent; }
+    .side-nav button:hover, .side-nav button.active { background: #2a5544; color: #fff; }
+    .side-nav .nav-dot { width: 8px; height: 8px; border: 1px solid #9cc5ad; border-radius: 50%; }
+    .side-nav button.active .nav-dot { border-color: #a8ddbd; background: #a8ddbd; }
+    .simulator { padding-top: 4px; border-top: 1px solid #385c4d; }
+    .simulator button { width: 100%; margin: 4px 0; padding: 9px 10px; border: 1px solid #527564; border-radius: 9px; color: #eaf6ed; background: #23483a; text-align: left; font-size: 13px; }
+    .simulator button:hover { border-color: #a8ddbd; background: #2c5a47; }
+    .side-note { margin-top: auto; padding: 13px 12px; border: 1px solid #3b5e50; border-radius: 12px; color: #b8cfc1; background: #203f34; font-size: 12px; }
+    .side-note strong { display: block; margin-bottom: 4px; color: #e8f5eb; font-weight: 500; }
+    .workspace { min-width: 0; padding: 22px 28px 36px; }
+    .workspace-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; max-width: 1180px; margin: 0 auto 22px; }
+    .workspace-header > div:first-child { min-width: 0; flex: 1 1 280px; }
+    .workspace-header h1 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: .01em; }
+    .workspace-header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .connection-pill { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--green-dark); font-size: 13px; white-space: nowrap; }
+    .connection-pill > span:last-child { overflow: hidden; text-overflow: ellipsis; }
+    .connection-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #55a779; }
+    .connection-pill.offline { color: var(--coral); }
+    .connection-pill.offline .dot { background: var(--coral); }
+    .runtime-mode { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; margin-top: 8px; padding: 4px 9px; border-radius: 999px; color: var(--muted); background: var(--surface-soft); font-size: 11px; }
+    .runtime-mode.native { color: var(--green-dark); background: var(--green-soft); }
+    .runtime-mode.demo { color: #7a531d; background: var(--amber-soft); }
+    .native-mode .simulator { display: none; }
+    .native-mode .demo-shell, .native-mode .workspace-grid { display: block; }
+    .native-mode .demo-sidebar, .native-mode .workspace-header, .native-mode .phone-status, .native-mode .inspector { display: none; }
+    .native-mode .workspace { padding: 0; }
+    .native-mode .phone-frame { border: 0; border-radius: 0; box-shadow: none; }
+    .native-mode .app-screen { min-height: calc(100vh - 66px); padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+    .native-mode .app-nav { position: fixed; left: 0; right: 0; bottom: 0; padding-bottom: max(12px, env(safe-area-inset-bottom)); z-index: 2; }
+    .native-mode .notice { bottom: calc(86px + env(safe-area-inset-bottom)); }
+    .runtime-mode { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; margin-top: 8px; padding: 4px 9px; border-radius: 999px; color: var(--muted); background: var(--surface-soft); font-size: 11px; }
+    .runtime-mode.native { color: var(--green-dark); background: var(--green-soft); }
+    .runtime-mode.demo { color: #7a531d; background: var(--amber-soft); }
+    .workspace-grid { display: grid; grid-template-columns: minmax(0, 730px) minmax(255px, 335px); gap: 22px; align-items: start; max-width: 1180px; margin: 0 auto; }
+    .phone-frame { overflow: hidden; border: 1px solid #cbd9d0; border-radius: 30px; background: var(--surface); box-shadow: var(--shadow); }
+    .phone-status { display: flex; justify-content: space-between; padding: 12px 21px 5px; color: var(--muted); font-size: 11px; }
+    .app-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 24px 16px; border-bottom: 1px solid var(--line); }
+    .app-header strong { font-size: 17px; font-weight: 600; }
+    .app-header span { color: var(--muted); font-size: 12px; }
+    .app-screen { min-height: 640px; padding: 24px 28px 30px; background: var(--surface-soft); }
+    .app-nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 8px 10px 12px; border-top: 1px solid var(--line); background: var(--surface); }
+    .app-nav button { min-height: 47px; border: 0; border-radius: 10px; color: var(--muted); background: transparent; font-size: 12px; }
+    .app-nav button.active { color: var(--green-dark); background: var(--green-soft); font-weight: 600; }
+    .app-nav button:hover { background: var(--surface-soft); }
+    .eyebrow { margin-bottom: 5px; color: var(--green); font-size: 12px; letter-spacing: .1em; }
+    .app-screen h2 { margin: 0 0 9px; font-size: 29px; line-height: 1.28; font-weight: 600; }
+    .app-screen h3 { margin: 0 0 6px; font-size: 17px; font-weight: 600; }
+    .app-screen p { margin: 0 0 14px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .app-section { margin-top: 18px; }
+    .app-card { margin-top: 13px; padding: 17px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow-wrap: anywhere; }
+    .app-card.soft { border-color: transparent; background: var(--green-soft); }
+    .app-card.blue { border-color: transparent; background: var(--blue-soft); }
+    .app-card.warn { border-color: transparent; background: var(--amber-soft); color: #674614; }
+    .app-card.danger { border-color: transparent; background: var(--coral-soft); color: #703b2f; }
+    .status-hero { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 15px; align-items: center; padding: 19px; border-radius: var(--radius); background: var(--green-dark); color: #f0fbf3; }
+    .status-mark { width: 64px; height: 64px; display: grid; place-items: center; border: 1px solid #80b799; border-radius: 50%; color: #c4eed0; font-size: 12px; }
+    .status-hero h3 { margin: 0 0 4px; font-size: 19px; }
+    .status-hero p { margin: 0; color: #c9e3d0; font-size: 13px; }
+    .stage-list { display: grid; gap: 9px; margin-top: 14px; }
+    .stage { display: grid; grid-template-columns: 25px minmax(0, 1fr) auto; gap: 9px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13px; overflow-wrap: anywhere; }
+    .stage:last-child { border-bottom: 0; }
+    .stage-index { width: 23px; height: 23px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); font-size: 11px; }
+    .stage.done .stage-index { border-color: var(--green); background: var(--green); color: #fff; }
+    .stage.active .stage-index { border-color: var(--blue); background: var(--blue-soft); color: var(--blue); }
+    .stage strong { display: block; font-weight: 500; }
+    .stage small { display: block; color: var(--muted); font-size: 11px; }
+    .stage-state { color: var(--muted); font-size: 11px; white-space: nowrap; }
+    .stage.done .stage-state { color: var(--green); }
+    .stage.active .stage-state { color: var(--blue); }
+    .live-stage { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .live-stage h3 { margin-bottom: 0; }
+    .live-stage-detail { margin-top: 9px !important; margin-bottom: 0 !important; color: var(--muted); font-size: 13px; }
+    .transfer-track { height: 7px; margin-top: 13px; overflow: hidden; border-radius: 9px; background: var(--line); }
+    .transfer-fill { height: 100%; border-radius: inherit; background: var(--green); transition: width .2s ease; }
+    .transfer-numbers { display: flex; justify-content: space-between; gap: 10px; margin-top: 7px; color: var(--muted); font-size: 12px; }
+    .stage-path { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+    .stage-path span { padding: 3px 7px; border-radius: 6px; color: var(--muted); background: var(--surface-soft); font-size: 11px; }
+    .stage-path span.current { color: var(--green-dark); background: var(--green-soft); font-weight: 600; }
+    .device-name { overflow-wrap: anywhere; }
+    .device-address { font-family: Consolas, monospace; }
+    .device-list { margin-top: 8px; }
+    .device-list button { flex-shrink: 0; }
+    button:disabled { cursor: default; opacity: .55; }
+    .quote-list { display: grid; gap: 8px; margin-top: 9px; }
+    .quote { padding: 10px 12px; border-left: 3px solid #83b89a; color: var(--green-dark); background: rgba(255,255,255,.5); font-size: 15px; }
+    .result-line { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .result-line:last-child { border-bottom: 0; }
+    .result-line small { display: block; color: var(--muted); font-size: 11px; }
+    .tag { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 8px; border-radius: 999px; color: var(--green-dark); background: var(--green-soft); font-size: 11px; white-space: nowrap; }
+    .tag.blue { color: var(--blue); background: var(--blue-soft); }
+    .tag.warn { color: #7a531d; background: var(--amber-soft); }
+    .tag.danger { color: #7c3e31; background: var(--coral-soft); }
+    .primary-button, .secondary-button, .text-button { min-height: 43px; border-radius: 10px; padding: 9px 13px; }
+    .primary-button { border: 1px solid var(--green); color: #fff; background: var(--green); }
+    .primary-button:hover { background: var(--green-dark); }
+    .secondary-button { border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+    .secondary-button:hover { border-color: var(--green); }
+    .text-button { border: 0; color: var(--green); background: transparent; padding-inline: 3px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+    .form-field { display: grid; gap: 6px; margin-top: 13px; color: var(--muted); font-size: 13px; }
+    .form-field input { width: 100%; min-height: 43px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 9px; color: var(--ink); background: var(--surface); font-size: 16px; }
+    .form-field input:focus { outline: 2px solid #b5d9c2; outline-offset: 1px; border-color: var(--green); }
+    .check-row { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; color: var(--muted); font-size: 13px; }
+    .check-row input { margin-top: 4px; accent-color: var(--green); }
+    .record { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .record:first-child { padding-top: 0; }
+    .record:last-child { padding-bottom: 0; border-bottom: 0; }
+    .record-meta { display: flex; justify-content: space-between; gap: 9px; margin-bottom: 5px; color: var(--muted); font-size: 11px; }
+    .record-title { margin-bottom: 3px; font-size: 15px; }
+    .record-detail { color: var(--muted); font-size: 12px; }
+    .empty-state { padding: 27px 10px; text-align: center; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 14px; }
+    .info-cell { padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    .info-cell small { display: block; color: var(--muted); font-size: 11px; }
+    .info-cell strong { display: block; margin-top: 3px; font-size: 14px; font-weight: 500; }
+    .inspector { display: grid; gap: 14px; }
+    .inspector-card { padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); box-shadow: var(--small-shadow); }
+    .inspector-card h3 { margin: 0 0 11px; font-size: 14px; font-weight: 600; }
+    .inspector-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .flow-map { display: grid; gap: 6px; margin-top: 12px; }
+    .flow-node { display: grid; grid-template-columns: 20px minmax(0,1fr); gap: 8px; align-items: start; padding: 8px 9px; border-radius: 9px; background: var(--surface-soft); font-size: 12px; overflow-wrap: anywhere; }
+    .flow-node .node-dot { width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; background: var(--green); }
+    .flow-node.blue .node-dot { background: var(--blue); }
+    .flow-node.warn .node-dot { background: var(--amber); }
+    .flow-node small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
+    .event-log { display: grid; gap: 8px; max-height: 250px; overflow: auto; }
+    .log-entry { padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .log-entry:last-child { border-bottom: 0; }
+    .log-entry time { display: block; margin-bottom: 2px; color: var(--muted); font-size: 10px; }
+    .notice { position: fixed; right: 22px; bottom: 22px; z-index: 5; max-width: 330px; padding: 12px 14px; border: 1px solid #99c7aa; border-radius: 12px; color: var(--green-dark); background: #f1fbf4; box-shadow: var(--small-shadow); font-size: 13px; opacity: 0; transform: translateY(8px); pointer-events: none; transition: .2s ease; }
+    .notice.show { opacity: 1; transform: translateY(0); }
+    .ai-step { display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .ai-step:last-child { border-bottom: 0; }
+    .ai-step-number { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: var(--blue-soft); color: var(--blue); font-size: 11px; }
+    .ai-step strong { display: block; font-size: 13px; font-weight: 500; }
+    .ai-step span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+    .safety-board { display: grid; gap: 7px; margin-top: 12px; }
+    .safety-row { display: flex; justify-content: space-between; gap: 10px; padding: 9px 10px; border-radius: 9px; background: var(--surface-soft); font-size: 12px; }
+    .safety-row strong { font-weight: 500; }
+    .safety-row span { color: var(--green); text-align: right; }
+    .code-line { margin-top: 12px; padding: 10px 11px; overflow: auto; border-radius: 9px; color: #d5f1dd; background: #1a332a; font-family: Consolas, monospace; font-size: 11px; white-space: nowrap; }
+    .tiny-note { margin-top: 10px; color: var(--muted); font-size: 11px; }
+    @media (max-width: 980px) {
+      .demo-shell { grid-template-columns: 225px minmax(0, 1fr); }
+      .workspace { padding-inline: 18px; }
+      .workspace-grid { grid-template-columns: minmax(0, 1fr); }
+      .inspector { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .inspector-card:last-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 700px) {
+      .demo-shell { display: block; }
+      .demo-sidebar { min-height: auto; padding: 15px; }
+      .side-nav { display: flex; overflow-x: auto; padding-bottom: 2px; }
+      .side-nav button { flex: 0 0 auto; width: auto; min-height: 39px; }
+      /* Keep the developer controls available on a phone-sized preview; they are
+         outside the simulated app and therefore do not expose voice/camera UI
+         to the elderly user. */
+      .simulator { display: block; }
+      .simulator button { min-height: 42px; }
+      .side-note { display: none; }
+      .workspace { padding: 14px 10px 22px; }
+      .workspace-header { align-items: flex-start; margin-bottom: 13px; gap: 10px; }
+      .workspace-header h1 { font-size: 20px; }
+      .connection-pill { margin-left: auto; padding: 7px 9px; font-size: 11px; }
+      .phone-frame { border-radius: 22px; }
+      .app-screen { min-height: 590px; padding: 19px 17px 24px; }
+      .app-header { padding-inline: 17px; }
+      .app-nav { gap: 0; padding-inline: 4px; }
+      .app-nav button { font-size: 11px; }
+      .app-screen h2 { font-size: 25px; }
+      .inspector { grid-template-columns: 1fr; }
+      .inspector-card:last-child { grid-column: auto; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-shell">
+    <aside class="demo-sidebar">
+      <div class="brand">
+        <div class="brand-mark">声</div>
+        <div><strong>语音生活助手</strong><small>BLE 录音与后台连接联调版</small></div>
+      </div>
+      <div>
+        <div class="side-label">体验身份（演示）</div>
+        <div class="mode-switch">
+          <button type="button" data-role="elder" class="active">老人使用</button>
+          <button type="button" data-role="family">家人查看</button>
+        </div>
+      </div>
+      <div>
+        <div class="side-label">应用页面</div>
+        <nav class="side-nav" id="sideNav" aria-label="应用页面">
+          <button type="button" data-page="home"><span class="nav-dot"></span>首页</button>
+          <button type="button" data-page="records"><span class="nav-dot"></span>日常记录</button>
+          <button type="button" data-page="contacts"><span class="nav-dot"></span>联系人与求助</button>
+          <button type="button" data-page="ai"><span class="nav-dot"></span>AI 单步安全</button>
+          <button type="button" data-page="settings"><span class="nav-dot"></span>设备与设置</button>
+        </nav>
+      </div>
+      <div class="simulator">
+        <div class="side-label">开发者演示控制台（仅演示）</div>
+        <button type="button" data-demo="douyin">模拟收到 WAV：打开抖音</button>
+        <button type="button" data-demo="qq">模拟收到 WAV：打开 QQ</button>
+        <button type="button" data-demo="wechat">模拟收到 WAV：打开微信</button>
+        <button type="button" data-demo="call">模拟收到 WAV：给女儿打电话</button>
+        <button type="button" data-demo="medicine">模拟摄像头：拍照问药</button>
+        <button type="button" data-demo="emergency">模拟硬件：紧急按钮双击</button>
+        <button type="button" data-demo="next">运行一次 NextAction 安全练习</button>
+        <button type="button" data-demo="reset">清空本次演示数据</button>
+      </div>
+      <div class="side-note"><strong>这组按钮只为没有硬件时测试</strong>正式版里，语音和拍照由 ESP32/BLE 在后台触发；老人首页不会显示“语音按钮”和“拍照按钮”。</div>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-header">
+        <div><h1>完整交互测试版</h1><p>老人首页只显示设备状态和结果；语音、拍照由硬件在后台触发。</p><div class="runtime-mode demo" id="runtimeMode">当前为页面演示，不连接原生运行时</div></div>
+        <div class="connection-pill" id="connectionPill"><span class="dot"></span><span id="connectionText">Korvo-2 示例已连接</span></div>
+      </header>
+
+      <div class="workspace-grid">
+        <section class="phone-frame" aria-label="语音生活助手应用预览">
+          <div class="phone-status"><span>09:41</span><span>测试预览</span></div>
+          <header class="app-header"><strong>语音生活助手</strong><span id="appRole">老人端</span></header>
+          <main class="app-screen" id="appScreen" aria-live="polite"></main>
+          <nav class="app-nav" id="appNav" aria-label="应用导航"></nav>
+        </section>
+
+        <aside class="inspector" aria-label="联调信息">
+          <section class="inspector-card">
+            <h3>运行时连接</h3>
+            <p id="runtimeDetail">页面打开后会尝试连接 Android 原生运行时；没有连接时，左侧按钮只改变本页的演示数据。</p>
+          </section>
+          <section class="inspector-card">
+            <h3>实际数据流</h3>
+            <p>语音和视觉都在后台跑；这里把每个阶段显示出来，方便定位卡在哪一步。</p>
+            <div class="flow-map">
+              <div class="flow-node"><span class="node-dot"></span><div><strong>ESP32 → BLE</strong><small>A 发送 v1 文字；兼容原有 WAV</small></div></div>
+              <div class="flow-node blue"><span class="node-dot"></span><div><strong>A 文字校验 / Vosk</strong><small>文字校验去重；WAV 在手机离线识别</small></div></div>
+              <div class="flow-node"><span class="node-dot"></span><div><strong>指令执行</strong><small>明确指令 → 电话 / 按名称打开已安装应用</small></div></div>
+              <div class="flow-node warn"><span class="node-dot"></span><div><strong>本机记录 → 后端</strong><small>先 SQLite，再按 URL 异步同步</small></div></div>
+            </div>
+          </section>
+          <section class="inspector-card">
+            <h3>本次演示日志</h3>
+            <div class="event-log" id="eventLog"></div>
+          </section>
+          <section class="inspector-card">
+            <h3>边界提醒</h3>
+            <p>只有“原生运行时已连接”且收到原生回传，才表示手机实际处理过事件。左侧演示按钮不会拨号、不会打开任何应用、不会上传图片，也不会通知联系人。</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <div class="notice" id="notice" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      const storageKey = 'voice-life-demo-0.6.2';
+      const defaultState = {
+        page: 'home', role: 'elder', connected: false, endpoint: 'http://电脑局域网IP:8787/v1/events',
+        deviceId: 'elder-demo-01', backendEnabled: false, nextActionEnabled: false,
+        contact: { name: '女儿', phone: '13800138000' }, contacts: [], records: [], log: [], processing: null,
+        lastResult: null, flowToken: 0, nextActionRuns: 0, nextActionLast: '尚未运行', notice: ''
+      };
+      const saved = (() => { try { return JSON.parse(localStorage.getItem(storageKey) || 'null'); } catch (_) { return null; } })();
+      const state = Object.assign({}, defaultState, saved || {});
+      state.contact = Object.assign({}, defaultState.contact, saved && saved.contact || {});
+      state.contacts = Array.isArray(state.contacts) ? state.contacts : [];
+      state.records = Array.isArray(state.records) ? state.records : [];
+      state.log = Array.isArray(state.log) ? state.log : [];
+      // A page reload cannot resume JavaScript timers. Do not leave the preview
+      // looking permanently busy when a previous session was interrupted.
+      state.processing = null;
+      state.flowToken = 0;
+      const nativeBridge = window.AndroidApp && typeof window.AndroidApp.postMessage === 'function' ? window.AndroidApp : null;
+      const nativeRuntime = Boolean(nativeBridge);
+      let nativeSnapshot = null;
+      let requestSequence = 0;
+      let pendingContactRequest = null;
+      if (nativeRuntime) {
+        document.body.classList.add('native-mode');
+        state.page = 'home';
+        state.role = 'elder';
+        state.connected = false;
+        state.contact = { name: '正在读取…', phone: '' };
+        state.contacts = [];
+        state.records = [];
+        state.log = [];
+        state.lastResult = null;
+      }
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const esc = (value) => String(value == null ? '' : value).replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+      const now = () => new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+      const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) {} };
+      const showNotice = (message) => {
+        const node = $('#notice'); node.textContent = message; node.classList.add('show');
+        clearTimeout(showNotice.timer); showNotice.timer = setTimeout(() => node.classList.remove('show'), 2800);
+      };
+      const vibrate = (pattern) => { if (navigator.vibrate) navigator.vibrate(pattern || [70]); };
+      const postNative = (type, payload = {}) => {
+        if (!nativeBridge) return false;
+        const message = Object.assign({ type, request_id: `web-${Date.now()}-${++requestSequence}` }, payload);
+        try { nativeBridge.postMessage(JSON.stringify(message)); return message.request_id; }
+        catch (_) { showNotice('Android 助手暂时没有响应，请返回后重试。'); return false; }
+      };
+      const applyNativeMessage = (raw) => {
+        let message;
+        try { message = typeof raw === 'string' ? JSON.parse(raw) : raw; } catch (_) { return; }
+        if (!message || typeof message !== 'object') return;
+        if (message.type === 'state' || message.type === 'status') {
+          nativeSnapshot = Object.assign({}, nativeSnapshot || {}, message);
+          if (typeof message.connected === 'boolean') state.connected = message.connected;
+          if (message.contact && typeof message.contact === 'object') state.contact = Object.assign({}, state.contact, message.contact);
+          if (Array.isArray(message.contacts)) {
+            state.contacts = message.contacts.slice(0, 100);
+            if (message.contacts[0]) state.contact = Object.assign({}, state.contact, message.contacts[0]);
+          }
+          if (Array.isArray(message.records)) state.records = message.records.slice(0, 30);
+          if (Array.isArray(message.logs)) state.log = message.logs.slice(0, 10);
+          if (Object.prototype.hasOwnProperty.call(message, 'lastResult')) {
+            state.lastResult = message.lastResult && typeof message.lastResult === 'object' ? message.lastResult : null;
+          }
+          render();
+          return;
+        }
+        if (message.type === 'event' && message.event) {
+          const event = message.event;
+          addLog(event.message || event.detail || '收到 Android 运行状态更新');
+          if (event.record) state.records.unshift(Object.assign({ id: 'native-' + Date.now(), time: now(), synced: false }, event.record));
+          if (event.result) state.lastResult = event.result;
+          if (typeof event.connected === 'boolean') state.connected = event.connected;
+          render();
+          return;
+        }
+        if (message.type === 'contact_saved') {
+          if (message.contact) state.contact = Object.assign({}, state.contact, message.contact);
+          addLog('联系人已保存到 Android 应用设置');
+          showNotice('联系人已保存。');
+          render();
+        } else if (message.type === 'result' && message.request_id === pendingContactRequest) {
+          pendingContactRequest = null;
+          showNotice(message.ok ? (message.message || '联系人已保存到本机 App。') : (message.message || '联系人保存失败。'));
+        } else if (message.type === 'result' && message.ok === false) {
+          showNotice(message.message || '操作未完成，请查看设备状态。');
+        } else if (message.type === 'error') {
+          showNotice(message.message || 'Android 操作未完成，请查看原生页面状态。');
+        }
+      };
+      window.onNativeMessage = applyNativeMessage;
+      const addLog = (message) => { state.log.unshift({ time: now(), message }); state.log = state.log.slice(0, 10); };
+      const addRecord = (record) => {
+        state.records.unshift(Object.assign({ id: 'r-' + Date.now(), time: now(), synced: false }, record));
+        state.records = state.records.slice(0, 30); save();
+      };
+      const stageNames = (kind) => kind === 'medicine'
+        ? ['收到图片', 'OCR 提取文字', '定位“一日几次”', '生成安全提示并记录']
+        : kind === 'emergency'
+          ? ['检测到硬件双击', '准备定位信息', '通知联系人并发起电话', '写入求助记录']
+          : ['收到完整 WAV', '手机离线转文字', '匹配指令并执行', '写入本机记录'];
+      const stageDetail = (kind, stage, command) => {
+        if (kind === 'medicine') return ['演示：收到图片材料', '演示文字：每次 1 片，一日 3 次', '演示：定位关键词，未识别真实药品', '演示流程结束，未写入 Android 数据库'][stage - 1];
+        if (kind === 'emergency') return ['演示：模拟按钮双击事件', '未读取真实定位', '未通知联系人，也未拨号', '演示流程结束，未写入 Android 数据库'][stage - 1];
+        return ['演示：模拟收到 WAV', '演示：假设手机离线识别成功', /^打开/.test(command) ? '演示按名称查找应用；未读取安装列表或启动应用' : '未拨号，仅展示模拟状态', '演示流程结束，未写入 Android 数据库'][stage - 1];
+      };
+      function renderStages(flow) {
+        const names = stageNames(flow.kind);
+        return '<div class="stage-list">' + names.map((name, index) => {
+          const number = index + 1; const done = flow.stage > number; const active = flow.stage === number;
+          return `<div class="stage ${done ? 'done' : ''} ${active ? 'active' : ''}"><span class="stage-index">${done ? '✓' : number}</span><div><strong>${name}</strong><small>${done || active ? esc(stageDetail(flow.kind, number, flow.command)) : '等待前一步完成'}</small></div><span class="stage-state">${done ? '演示' : active ? '演示中' : '等待'}</span></div>`;
+        }).join('') + '</div>';
+      }
+      function renderLiveVoiceStatus() {
+        if (!nativeRuntime) return '';
+        const snapshot = nativeSnapshot || {};
+        const stage = typeof snapshot.voiceStage === 'string' ? snapshot.voiceStage : 'idle';
+        const stages = {
+          idle: ['等待硬件录音', '待命'], recording: ['硬件正在录音', '录音中'], receiving: ['正在接收硬件录音', '接收中'],
+          validating: ['正在校验录音', '校验中'],
+          model: ['正在准备语音模型', '准备中'], transcribing: ['正在转成文字', '识别中'],
+          understanding: ['正在理解你的指令', '理解中'],
+          executing: ['正在处理指令', '处理中'], vision: ['正在等待照片或识别答案', '视觉识别中'],
+          waiting_confirm: ['等待你的语音确认', '待确认'],
+          done: ['本次处理已完成', '已完成'], error: ['本次处理未完成', '请查看提示']
+        };
+        const current = stages[stage] || ['等待运行状态', '同步中'];
+        const detail = snapshot.voiceProgressText || (stage === 'idle'
+          ? (state.connected ? '按硬件按钮录音，录音结束后会自动处理。' : '请在“设置”中连接硬件。')
+          : snapshot.analysisStatus || '等待 Android 返回本阶段状态。');
+        const received = Number(snapshot.voiceReceivedBytes);
+        const total = Number(snapshot.voiceTotalBytes);
+        const rate = Number(snapshot.voiceBytesPerSecond);
+        const percent = snapshot.voicePercent !== null && snapshot.voicePercent !== undefined && Number.isFinite(Number(snapshot.voicePercent))
+          ? Math.min(100, Math.max(0, Number(snapshot.voicePercent))) : null;
+        const receiving = stage === 'receiving';
+        const numbers = receiving && Number.isFinite(received) && received > 0
+          ? `<div class="transfer-numbers"><span>${(received / 1024).toFixed(1)}${Number.isFinite(total) && total > 0 ? ' / ' + (total / 1024).toFixed(1) : ''} KB${percent !== null ? ' · ' + Math.round(percent) + '%' : ''}</span><span>${Number.isFinite(rate) && rate > 0 ? (rate / 1024).toFixed(1) + ' KB/s' : '速度待计算'}</span></div>` : '';
+        const progress = (receiving || stage === 'transcribing') && percent !== null
+          ? `<div class="transfer-track" role="progressbar" aria-label="${receiving ? '录音接收' : '转文字'}进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(percent)}"><div class="transfer-fill" style="width:${percent}%"></div></div>` : '';
+        const path = [['recording', '录音'], ['receiving', '接收'], ['transcribing', '转文字'], ['understanding', '理解'], ['executing', '处理'], ['done', '结果']];
+        const currentStep = ({ validating: 'receiving', model: 'transcribing', vision: 'executing', waiting_confirm: 'executing', error: 'done' })[stage] || stage;
+        const transcript = snapshot.transcriptText ? `<p class="tiny-note">最近识别：${esc(snapshot.transcriptText)}</p>` : '';
+        return `<div class="app-card ${stage === 'error' ? 'danger' : ''}"><div class="live-stage"><h3>${esc(current[0])}</h3><span class="tag ${stage === 'error' ? 'danger' : stage === 'idle' ? '' : 'blue'}">${esc(current[1])}</span></div><p class="live-stage-detail">${esc(detail)}</p>${progress}${numbers}<div class="stage-path" aria-label="当前处理阶段">${path.map(([key, label]) => `<span class="${currentStep === key ? 'current' : ''}"${currentStep === key ? ' aria-current="step"' : ''}>${label}</span>`).join('')}</div>${transcript}</div>`;
+      }
+      function renderPermissionCard(always = false) {
+        if (!nativeRuntime) return '';
+        const snapshot = nativeSnapshot || {};
+        const permissions = snapshot.permissions || {};
+        const rawMissing = Array.isArray(snapshot.missingPermissions) ? snapshot.missingPermissions : permissions.missing;
+        const missing = Array.isArray(rawMissing) ? rawMissing.filter((item) => typeof item === 'string' && item).slice(0, 12) : [];
+        const complete = typeof snapshot.setupComplete === 'boolean' ? snapshot.setupComplete : permissions.setupComplete;
+        const needsRepair = missing.length > 0 || complete === false;
+        if (!always && !needsRepair) return '';
+        const summary = snapshot.permissionSummary || permissions.summary || (complete === true
+          ? '必要权限和系统开关已准备好' : '等待手机检查权限和系统开关');
+        return `<div class="app-card ${needsRepair ? 'warn' : 'soft'}" data-permission-recovery><div class="result-line"><div><h3>${needsRepair ? '需要完成权限设置' : '权限与系统开关'}</h3><small>${esc(summary)}</small></div><span class="tag ${needsRepair ? 'warn' : ''}">${complete === true && !missing.length ? '已准备好' : needsRepair ? '待设置' : '检查中'}</span></div>${missing.length ? `<p class="tiny-note">尚未完成：${missing.map(esc).join('、')}</p>` : ''}<p class="muted">点击后按顺序完成系统授权；已经开启的项目会自动跳过。无障碍开启后，B 的屏幕帮助仍需单独同意。</p><div class="button-row"><button type="button" class="${needsRepair ? 'primary-button' : 'secondary-button'}" data-action="repair-permissions">${needsRepair ? '一键修复权限' : '检查 / 修复权限'}</button>${always ? '<button type="button" class="text-button" data-action="open-assist">A/B 帮助配置</button>' : ''}</div></div>`;
+      }
+      function renderHome() {
+        const flow = state.processing;
+        const last = state.lastResult;
+        const status = nativeRuntime
+          ? (flow ? '后台正在处理' : state.connected ? '设备已连接' : '等待硬件连接')
+          : (flow ? '演示正在运行' : '测试预览');
+        const description = nativeRuntime
+          ? (nativeSnapshot?.bleStage || (state.connected ? '语音和拍照由硬件触发。' : '首次使用，请到“设置”选择你的设备。'))
+          : '页面演示模式：不会接收硬件、转写录音、拨号、打开应用或保存到 Android 数据库。';
+        const lastHtml = last ? `<div class="app-card"><div class="result-line"><div><small>最近一次${nativeRuntime ? '处理结果' : '演示状态'}</small><strong>${esc(last.title || '助手状态')}</strong></div><span class="tag ${last.kind === 'emergency' ? 'danger' : last.kind === 'medicine' ? 'blue' : ''}">${esc(last.status || '状态')}</span></div><p class="muted">${esc(last.detail || '')}</p><small class="muted">${esc(last.time || '')}${nativeRuntime ? '' : ' · 仅演示'}</small></div>` : `<div class="app-card soft"><h3>${nativeRuntime ? '还没有处理结果' : '测试预览'}</h3><p class="muted">${nativeRuntime ? '收到硬件语音后，识别出的文字和执行结果会显示在这里。' : '连接到原生运行时后，这里显示真实硬件、识别和操作状态。'}</p></div>`;
+        const runtimeHint = nativeRuntime ? '' : '<div class="app-card warn"><strong>仅页面演示</strong><p class="muted">左侧开发者演示控制台只更新网页样例，不会真的执行手机操作或产生云端记录。</p></div>';
+        const backgroundHint = nativeRuntime
+          ? (nativeSnapshot?.backgroundHardwareRunning
+            ? '后台连接已开启。切换到其他 App 后，仍可接收硬件录音；执行手机操作时，请保持手机解锁。'
+            : nativeSnapshot?.backgroundHardwareEnabled
+              ? '后台连接已启用，服务尚未运行。请在“设置”检查后台运行权限。'
+              : '可在“设置”开启后台连接，切换到其他 App 后继续接收硬件录音。')
+          : '真实运行时，设备连接、录音接收、转文字和执行结果会显示在这里。';
+        return `<div class="eyebrow">${state.role === 'elder' ? '老人使用' : '同一账号 · 家人查看（预览）'}</div><div class="status-hero"><div class="status-mark">${nativeRuntime ? 'BLE' : '演示'}</div><div><h3>${status}</h3><p>${esc(description)}</p></div></div>${renderPermissionCard()}${renderLiveVoiceStatus()}${flow ? `<div class="app-card"><div class="result-line"><div><small>${flow.kind === 'medicine' ? '视觉后台流程' : '语音后台流程'}</small><strong>${esc(flow.command || flow.title)}</strong></div><span class="tag warn">演示 ${flow.stage}/4</span></div>${renderStages(flow)}</div>` : lastHtml}${runtimeHint}<div class="app-card blue"><h3>硬件触发，无需找按钮</h3><p class="muted">${esc(backgroundHint)}</p>${nativeRuntime && !state.connected ? '<button type="button" class="secondary-button" data-page="settings">连接我的设备</button>' : ''}</div>`;
+      }
+      function renderRecords() {
+        const records = state.records;
+        const rows = records.length ? records.map((record) => `<div class="record"><div class="record-meta"><span>${esc(record.time)} · ${esc(record.source)}</span><span class="tag ${record.synced ? '' : 'warn'}">${record.synced ? '已同步' : '本机待同步'}</span></div><div class="record-title">${esc(record.title)}</div><div class="record-detail">${esc(record.detail)}</div></div>`).join('') : `<div class="empty-state">${nativeRuntime ? '当前没有可显示的本机记录。' : '还没有页面演示记录。<br>请在左侧开发者控制台添加示例。'}</div>`;
+        const description = nativeRuntime
+          ? `<p class="muted">${esc(nativeSnapshot?.syncStatus || '这里只显示 Android 运行时回传的记录；同步结果以原生状态为准。')}</p>`
+          : `<p class="muted">页面演示记录只保存在浏览器预览中，不会写入 App 或后端。事件保存接口需要后端同学提供；图片接口 <code>/analyze</code> 不能代替事件记录接口。</p>`;
+        const actions = nativeRuntime ? '' : '<div class="button-row"><button type="button" class="secondary-button" data-action="sync-demo">模拟同步待上传记录</button><button type="button" class="text-button" data-action="clear-records">清空记录</button></div>';
+        return `<div class="eyebrow">${state.role === 'elder' ? '我的记录' : '家人的记录（预览）'}</div><h2>日常记录</h2>${description}<div class="app-card">${rows}</div>${nativeRuntime ? '' : `<div class="app-card warn"><strong>仅页面预览</strong>${actions}</div>`}`;
+      }
+      function renderContacts() {
+        const demoControl = nativeRuntime ? '' : '<button type="button" class="secondary-button" data-demo="emergency">演示硬件双击</button>';
+        const status = nativeRuntime
+          ? '<p class="tiny-note">保存到本机 App 设置，不读取手机通讯录。紧急双击与定位通知能力仍以实际硬件和系统权限验收为准。</p>'
+          : '<p class="tiny-note">仅页面演示，不会真实拨号、发短信或获取定位。</p>';
+        const contacts = nativeRuntime
+          ? (state.contacts.length ? state.contacts : (state.contact.name && state.contact.name !== '正在读取…' ? [state.contact] : []))
+          : (state.contacts.length ? state.contacts : [state.contact]);
+        const contactRows = contacts.length
+          ? contacts.map((item, index) => `<div class="result-line"><div><small>${index === 0 ? '首选联系人' : '已保存联系人'}</small><strong>${esc(item.name || '')}</strong><small>${esc(item.phone || '')}</small></div><span class="tag">${nativeRuntime ? 'App 设置' : '预览'}</span></div>`).join('')
+          : '<div class="empty-state">暂无本机联系人，请先保存一位联系人。</div>';
+        return `<div class="eyebrow">联系人与紧急求助</div><h2>需要时，联系谁</h2><p class="muted">联系人保存在助手自己的设置里，不读取手机通讯录。</p><div class="app-card soft">${contactRows}</div><div class="app-card"><label class="form-field">联系人称呼<input id="contactName" type="text" value="${esc(state.contact.name === '正在读取…' ? '' : state.contact.name)}" maxlength="20"></label><label class="form-field">电话号码<input id="contactPhone" type="tel" value="${esc(state.contact.phone)}" maxlength="16"></label><div class="button-row"><button type="button" class="primary-button" data-action="save-contact">保存联系人</button>${demoControl}</div>${status}</div>${nativeRuntime ? '' : '<div class="app-card danger"><strong>尚未接入紧急事件</strong><p class="muted">页面模拟不会获取定位或通知联系人；真实紧急求助需另行完成并实机验收。</p></div>'}`;
+      }
+      function renderAi() {
+        const run = state.nextActionRuns;
+        const last = state.nextActionLast;
+        const modeLabel = nativeRuntime ? '页面安全演示' : '安全练习';
+        const modeNotice = nativeRuntime ? '<div class="app-card warn"><strong>这是页面说明，不会控制其他 App</strong><p class="muted">原生运行时不会从这个网页按钮发起 TAP、拨号或发消息。这里只展示单步安全规则。</p></div>' : '';
+        return `<div class="eyebrow">可选能力 · 不影响语音主流程</div><h2>AI 单步安全</h2><p class="muted">它只在用户明确触发时读取当前页面，选择一个真实存在的下一步动作，然后停止。</p>${modeNotice}<div class="app-card blue"><div class="ai-step"><span class="ai-step-number">1</span><div><strong>读取当前页面</strong><span>截图、控件树和最近操作，只作为本次判断材料。</span></div></div><div class="ai-step"><span class="ai-step-number">2</span><div><strong>选择一个候选动作</strong><span>只能选 TAP、SCROLL、BACK 或 NO_OP。</span></div></div><div class="ai-step"><span class="ai-step-number">3</span><div><strong>本地复核后执行一次</strong><span>页面不匹配就拒绝，执行一次后立即停止。</span></div></div><div class="code-line">模型决策 1 次 · 动作尝试 1 次 · 不重试 · 不连续点</div></div><div class="app-card"><div class="result-line"><div><small>${modeLabel}状态</small><strong>${esc(last)}</strong></div><span class="tag ${run ? 'blue' : ''}">${run ? '已练习 ' + run + ' 次' : '未运行'}</span></div><p class="muted">第一次演示会选择“点击下一步”；再次请求会演示 NO_OP，说明它不会自动继续往后点。</p><div class="button-row"><button type="button" class="primary-button" data-demo="next">${run ? '再次请求（演示 NO_OP）' : '运行一次安全演示'}</button><button type="button" class="secondary-button" data-action="reset-next">重置演示</button></div></div><div class="app-card warn"><strong>和 A 语音控制的区别</strong><p class="muted">明确的打开应用和拨号优先在手机本地处理；更自然的 A 语句可交给单独的 A 指令代理理解。这里的 NextAction 只负责当前页面的单步安全规则。</p><div class="safety-board"><div class="safety-row"><strong>自动连续点击</strong><span>禁止</span></div><div class="safety-row"><strong>支付、发消息、拨号</strong><span>不作为默认目标</span></div><div class="safety-row"><strong>目标不存在或页面变化</strong><span>NO_OP / 拒绝</span></div></div></div>`;
+      }
+      function renderSettings() {
+        if (nativeRuntime) {
+          const appCount = Number.isInteger(nativeSnapshot?.installedAppCount) && nativeSnapshot.installedAppCount >= 0 ? `${nativeSnapshot.installedAppCount} 个可启动应用` : '正在读取…';
+          const snapshot = nativeSnapshot || {};
+          const devices = Array.isArray(snapshot.bleDevices) ? snapshot.bleDevices.filter((item) => item && typeof item.address === 'string' && item.address).slice(0, 40) : [];
+          const scanning = snapshot.bleScanning === true;
+          const remembered = snapshot.bleRememberedName || snapshot.bleRememberedAddress || '';
+          const deviceRows = devices.map((device) => `<div class="result-line"><div class="device-name"><strong>${esc(device.name || '未命名 BLE 设备')}</strong><small class="device-address">${esc(device.address)}</small></div><button type="button" class="secondary-button" data-action="connect-hardware" data-address="${esc(device.address)}">连接</button></div>`).join('');
+          const deviceCard = `<div class="app-card"><div class="result-line"><div><small>我的语音设备</small><strong>${state.connected ? '已连接' : '未连接'}</strong></div><span class="tag ${state.connected ? '' : 'warn'}">BLE</span></div><p class="muted">${esc(snapshot.bleStage || '首次使用，请打开硬件，再搜索附近设备。')}</p>${remembered ? `<p class="tiny-note">已记住设备：${esc(remembered)}</p>` : ''}<div class="button-row"><button type="button" class="primary-button" data-action="scan-hardware" ${scanning ? 'disabled' : ''}>${scanning ? '正在搜索附近设备…' : '搜索附近设备'}</button>${state.connected ? '<button type="button" class="secondary-button" data-action="disconnect-hardware">断开设备</button>' : ''}</div><div class="device-list">${deviceRows || `<p class="tiny-note">${scanning ? '正在查找，请让硬件靠近手机并保持开机。' : '点“搜索附近设备”，再选择你的硬件；连接操作就在本页完成。'}</p>`}</div><label class="check-row"><input id="bleAutoReconnect" type="checkbox" ${snapshot.bleAutoReconnect ? 'checked' : ''}><span>自动重连已记住的设备</span></label><p class="tiny-note">首次由你或家人选定设备。之后开启自动重连，设备重新开机或回到附近时，助手会尝试恢复连接。</p></div>`;
+          const backgroundStatus = snapshot.backgroundHardwareRunning ? '后台连接服务正在运行' : snapshot.backgroundHardwareEnabled ? '已启用，后台连接服务尚未运行' : '尚未开启后台连接服务';
+          const backgroundCard = `<div class="app-card ${snapshot.backgroundHardwareRunning ? 'soft' : ''}"><div class="result-line"><div><strong>后台接收硬件指令</strong><small>${backgroundStatus}</small></div><span class="tag ${snapshot.backgroundHardwareRunning ? '' : 'warn'}">${snapshot.backgroundHardwareRunning ? '运行中' : snapshot.backgroundHardwareEnabled ? '待启动' : '未开启'}</span></div><p class="muted">开启后，切换到其他 App 时继续连接设备、接收录音。系统会显示持续运行通知。</p><div class="button-row"><button type="button" class="${snapshot.backgroundHardwareEnabled ? 'secondary-button' : 'primary-button'}" data-action="${snapshot.backgroundHardwareEnabled ? 'stop-background-hardware' : 'start-background-hardware'}">${snapshot.backgroundHardwareEnabled ? '停止后台连接' : '开启后台连接'}</button><button type="button" class="text-button" data-action="open-background-settings">后台运行设置</button></div><p class="tiny-note">请允许后台运行与通知。系统“强行停止”App 后需重新打开；锁屏时执行手机操作仍受系统限制。</p></div>`;
+          const asrCard = `<div class="app-card"><div class="result-line"><div><strong>离线语音识别</strong><small>${esc(snapshot.asrStatus || '等待 Android 返回模型准备状态')}</small></div><span class="tag ${snapshot.asrReady ? '' : 'warn'}">${snapshot.asrReady ? '已就绪' : '准备中'}</span></div><p class="tiny-note">模型准备与硬件接收分别显示；首页的处理阶段以本次录音的实际进度为准。</p></div>`;
+          const setupCard = renderPermissionCard(true);
+          const catalogCard = `<div class="app-card"><h3>语音理解与手机操作</h3><div class="result-line"><div><strong>${esc(appCount)}</strong><small>${esc(snapshot.appCatalogStatus || '等待 Android 返回应用目录状态')}</small></div><span class="tag blue">本机目录</span></div><p class="muted">说“打开 QQ”或“打开微信”，助手按真实已安装应用查找。配置 A 语音理解接口后，可先理解自然说法，再由手机核对并处理；实际可用能力以接口配置和联调结果为准。</p></div>`;
+          const diagnosticCard = `<div class="app-card"><h3>接口与联调</h3><p class="muted">首页只显示当前阶段和结果，完整收包及分析日志在这里查看。</p><div class="button-row"><button type="button" class="secondary-button" data-action="open-diagnostics">查看联调日志</button><button type="button" class="text-button" data-action="open-debug">高级接口设置</button></div><p class="tiny-note">记录同步：${esc(snapshot.syncStatus || '尚无同步状态')}</p></div>`;
+          return `<div class="eyebrow">家庭与设备</div><h2>设备与设置</h2>${deviceCard}${backgroundCard}${asrCard}${setupCard}${catalogCard}${diagnosticCard}`;
+        }
+        return `<div class="eyebrow">家庭与设备</div><h2>设备与设置</h2><div class="app-card"><div class="result-line"><div><small>Korvo-2 语音设备</small><strong>${state.connected ? '示例已连接' : '示例未连接'}</strong></div><span class="tag ${state.connected ? '' : 'danger'}">BLE</span></div><div class="button-row"><button type="button" class="secondary-button" data-action="toggle-device">${state.connected ? '模拟断开设备' : '模拟重新连接'}</button></div></div><div class="app-card"><h3>后端记录存储（页面预览）</h3><p class="muted">下面的设置只保存在网页预览，不会访问网络或修改 Android App。</p><label class="form-field">事件保存接口完整地址<input id="endpoint" type="url" value="${esc(state.endpoint)}"></label><label class="form-field">设备编号<input id="deviceId" type="text" value="${esc(state.deviceId)}"></label><label class="check-row"><input id="backendEnabled" type="checkbox" ${state.backendEnabled ? 'checked' : ''}><span>仅预览同步状态，不访问网络</span></label><div class="button-row"><button type="button" class="primary-button" data-action="save-settings">保存预览设置</button></div><p class="tiny-note">视觉接口 <code>http://192.168.1.17:8000/analyze</code> 不是录音转写或事件存储接口。</p></div><div class="app-card"><h3>反馈与权限（预览）</h3><div class="result-line"><div><strong>反馈</strong><small>成功短震；失败双短震（以 Android 实际状态为准）</small></div><span class="tag">震动</span></div><div class="result-line"><div><strong>AI 单步</strong><small>此页面只提供演示说明</small></div><span class="tag warn">未接入</span></div></div>`;
+      }
+      const pages = { home: renderHome, records: renderRecords, contacts: renderContacts, ai: renderAi, settings: renderSettings };
+      function renderNav() {
+        const labels = [['home','首页'], ['records','记录'], ['contacts','联系人'], ['ai','AI安全'], ['settings','设置']];
+        $('#appNav').innerHTML = labels.map(([page, label]) => `<button type="button" class="${state.page === page ? 'active' : ''}" data-page="${page}">${label}</button>`).join('');
+        document.querySelectorAll('#sideNav [data-page]').forEach((button) => button.classList.toggle('active', button.dataset.page === state.page));
+        document.querySelectorAll('[data-role]').forEach((button) => button.classList.toggle('active', button.dataset.role === state.role));
+      }
+      function renderLog() {
+        const log = state.log.length ? state.log.map((entry) => typeof entry === 'string' ? `<div class="log-entry">${esc(entry)}</div>` : `<div class="log-entry"><time>${esc(entry.time || '')}</time>${esc(entry.message || entry.detail || '')}</div>`).join('') : `<div class="empty-state">${nativeRuntime ? '等待 Android 运行时事件。' : '暂无页面演示事件。'}</div>`;
+        $('#eventLog').innerHTML = log;
+      }
+      let renderedPage = null;
+      function render() {
+        // Native BLE updates can arrive while a family member is editing a
+        // contact. Preserve the draft and caret through the status refresh.
+        const draft = nativeRuntime && renderedPage === state.page && state.page === 'contacts'
+          ? ['contactName', 'contactPhone'].map((id) => {
+            const field = $('#' + id);
+            return field ? { id, value: field.value, focused: document.activeElement === field, start: field.selectionStart, end: field.selectionEnd } : null;
+          }).filter(Boolean) : [];
+        $('#appScreen').innerHTML = pages[state.page]();
+        draft.forEach((item) => {
+          const field = $('#' + item.id);
+          if (!field) return;
+          field.value = item.value;
+          if (item.focused) {
+            field.focus({ preventScroll: true });
+            if (typeof field.setSelectionRange === 'function') field.setSelectionRange(item.start, item.end);
+          }
+        });
+        renderedPage = state.page;
+        $('#appRole').textContent = state.role === 'elder' ? '老人端' : '同一账号 · 家人';
+        $('#connectionPill').classList.toggle('offline', !state.connected);
+        $('#connectionText').textContent = nativeRuntime ? (state.connected ? 'Korvo-2 已连接' : 'Korvo-2 未连接') : '页面预览 · 未连接硬件';
+        const mode = $('#runtimeMode');
+        if (nativeRuntime) {
+          mode.textContent = 'Android 原生运行时已连接'; mode.classList.remove('demo'); mode.classList.add('native');
+          $('#runtimeDetail').textContent = '此页面显示同一 Android 助手 Activity 回传的设备、识别和本机记录状态。';
+        }
+        renderNav(); renderLog();
+        if (!nativeRuntime) save();
+      }
+      function setPage(page) { if (!pages[page]) return; state.page = page; render(); }
+      function finishFlow(token, flow, result) {
+        if (token !== state.flowToken) return;
+        result.title = `演示：${result.title}`;
+        result.status = '仅演示';
+        result.detail = `网页模拟，未执行手机操作，也未写入 App 或后端。${result.detail ? ' ' + result.detail : ''}`;
+        result.record.source = `页面演示 · ${result.record.source}`;
+        result.record.detail = `仅保存在此网页预览。${result.record.detail ? ' ' + result.record.detail : ''}`;
+        result.log = `页面演示：${result.log}`;
+        result.notice = '仅网页演示，未执行真实操作。';
+        result.time = now();
+        state.processing = null; state.lastResult = result; addRecord(result.record); addLog(result.log); showNotice(result.notice); vibrate(result.kind === 'emergency' ? [90, 70, 90] : [70]); render();
+      }
+      function startFlow(kind, command) {
+        if (state.processing) { showNotice('上一段后台流程还在处理，请等它完成。'); return; }
+        const token = ++state.flowToken; const flow = { kind, command, stage: 1, title: command || '紧急求助' }; state.processing = flow; addLog(kind === 'medicine' ? '视觉后台：收到图片材料' : kind === 'emergency' ? '硬件后台：检测到紧急按钮双击' : 'BLE后台：收到完整 WAV'); render();
+        [2, 3, 4].forEach((stage, index) => setTimeout(() => {
+          if (token !== state.flowToken || !state.processing) return;
+          state.processing.stage = stage; addLog(`${stageNames(kind)[stage - 1]}：${stageDetail(kind, stage, command)}`); render();
+          if (stage === 4) {
+            if (kind === 'medicine') finishFlow(token, flow, { kind, title: '拍照问药：一日 3 次（示例）', status: '已记录', detail: 'OCR 示例识别到“每次 1 片，一日 3 次”；正式版必须以药盒说明书和医生为准。', notice: '视觉问药演示完成，已写入本机记录。', log: '视觉问药结果已保存（示例）', record: { source: '拍照问药', title: '这药一日几次？', detail: '示例回答：一日 3 次；需以药品说明为准。' } });
+            else if (kind === 'emergency') finishFlow(token, flow, { kind, title: '紧急求助：已请求通知联系人', status: '已记录', detail: `演示联系人：${state.contact.name} ${state.contact.phone}；位置和电话均为模拟。`, notice: '紧急求助演示完成，已记录。', log: '紧急求助结果已保存（未真实发送）', record: { source: '紧急按钮', title: '双击紧急按钮', detail: `已模拟通知 ${state.contact.name}，未真实拨号或发定位。` } });
+            else if (/^打开/.test(command)) {
+              const appName = command.replace(/^打开\s*/, '');
+              finishFlow(token, flow, { kind, title: `打开${appName}`, status: '已请求', detail: `演示按本机应用名称“${appName}”查找启动入口；未读取真实安装列表，不代表真机已安装或已打开。`, notice: '打开应用流程演示完成。', log: `指令结果：已请求打开${appName}（模拟）`, record: { source: '硬件语音', title: `“${command}”`, detail: `手机离线转写后按名称查找并请求启动${appName}（示例）。` } });
+            }
+            else finishFlow(token, flow, { kind, title: '给女儿打电话', status: '已请求', detail: `演示请求 ACTION_CALL 拨打 ${state.contact.name}；不代表电话已接通。`, notice: '电话流程演示完成。', log: '指令结果：已请求拨号（模拟）', record: { source: '硬件语音', title: '“给女儿打电话”', detail: `手机离线转写后请求拨打 ${state.contact.name}。` } });
+          }
+        }, (index + 1) * 650));
+      }
+      function runNextAction() {
+        if (!state.nextActionEnabled) { showNotice('请先在“设置”打开演示用 NextAction，或直接进入 AI 安全页。'); state.page = 'ai'; render(); return; }
+        if (state.nextActionRuns === 0) { state.nextActionRuns = 1; state.nextActionLast = 'TAP · 点击“下一步”一次，然后停止'; addLog('NextAction：候选复核通过，执行一次 TAP'); showNotice('安全练习：只执行了一次点击，已停止。'); }
+        else { state.nextActionRuns += 1; state.nextActionLast = 'NO_OP · 没有继续动作'; addLog('NextAction：第二次请求返回 NO_OP，未继续点击'); showNotice('安全练习：没有继续操作，返回 NO_OP。'); }
+        state.page = 'ai'; render();
+      }
+      function resetDemo() { state.records = []; state.log = []; state.processing = null; state.lastResult = null; state.nextActionRuns = 0; state.nextActionLast = '尚未运行'; state.flowToken++; addLog('已清空本次演示数据'); showNotice('本次演示数据已清空。'); render(); }
+      document.addEventListener('click', (event) => {
+        const pageButton = event.target.closest('[data-page]'); if (pageButton) { setPage(pageButton.dataset.page); return; }
+        const roleButton = event.target.closest('[data-role]'); if (roleButton) { state.role = roleButton.dataset.role; state.page = 'home'; showNotice(state.role === 'elder' ? '已切换到老人查看方式。' : '已切换到家人查看方式。'); render(); return; }
+        const demoButton = event.target.closest('[data-demo]'); if (demoButton) {
+          const demo = demoButton.dataset.demo;
+          if (demo === 'douyin') startFlow('voice', '打开抖音');
+          else if (demo === 'qq') startFlow('voice', '打开 QQ');
+          else if (demo === 'wechat') startFlow('voice', '打开微信');
+          else if (demo === 'call') startFlow('voice', '给女儿打电话');
+          else if (demo === 'medicine') startFlow('medicine', '这药一日几次？');
+          else if (demo === 'emergency') startFlow('emergency', '紧急求助');
+          else if (demo === 'next') runNextAction();
+          else if (demo === 'reset') resetDemo();
+          return;
+        }
+        const action = event.target.closest('[data-action]'); if (!action) return;
+        if (action.dataset.action === 'save-contact') {
+          const name = $('#contactName').value.trim(); const phone = $('#contactPhone').value.replace(/\s/g, '');
+          if (!name || !/^\+?\d{7,15}$/.test(phone)) { showNotice('请填写称呼和 7～15 位数字号码。'); return; }
+          if (nativeRuntime) {
+            const requestId = postNative('save_contact', { name, phone });
+            if (requestId) { pendingContactRequest = requestId; showNotice('正在保存到本机 App…'); }
+            return;
+          }
+          state.contact = { name, phone }; addLog(`联系人已更新：${name}`); showNotice('联系人已保存到测试版设置。'); render();
+        } else if (action.dataset.action === 'toggle-device') { state.connected = !state.connected; addLog(state.connected ? '设备已模拟连接' : '设备已模拟断开'); render(); }
+        else if (action.dataset.action === 'scan-hardware' && nativeRuntime) { postNative('scanHardware'); }
+        else if (action.dataset.action === 'connect-hardware' && nativeRuntime) { postNative('connectHardware', { address: action.dataset.address }); }
+        else if (action.dataset.action === 'disconnect-hardware' && nativeRuntime) { postNative('disconnectHardware'); }
+        else if (action.dataset.action === 'start-background-hardware' && nativeRuntime) { postNative('startBackgroundHardware'); }
+        else if (action.dataset.action === 'stop-background-hardware' && nativeRuntime) { postNative('stopBackgroundHardware'); }
+        else if (action.dataset.action === 'open-background-settings' && nativeRuntime) { postNative('openBackgroundSettings'); }
+        else if (action.dataset.action === 'open-diagnostics' && nativeRuntime) { postNative('openDiagnostics'); }
+        else if (action.dataset.action === 'open-debug' && nativeRuntime) { postNative('open_debug'); }
+        else if (action.dataset.action === 'open-assist' && nativeRuntime) { postNative('open_assist'); }
+        else if (action.dataset.action === 'open-setup' && nativeRuntime) { postNative('open_setup'); }
+        else if (action.dataset.action === 'repair-permissions' && nativeRuntime) { postNative('repair_permissions'); }
+        else if (action.dataset.action === 'sync-demo') { state.records.forEach((record) => { record.synced = true; }); addLog('演示同步：待上传记录标记为已同步'); showNotice('已模拟同步，不会访问网络。'); render(); }
+        else if (action.dataset.action === 'clear-records') { state.records = []; addLog('已清空记录列表'); render(); }
+        else if (action.dataset.action === 'reset-next') { state.nextActionRuns = 0; state.nextActionLast = '尚未运行'; showNotice('NextAction 练习已重置。'); render(); }
+        else if (action.dataset.action === 'save-settings') {
+          const endpoint = $('#endpoint').value.trim(); const deviceId = $('#deviceId').value.trim();
+          if (!endpoint || !deviceId) { showNotice('请填写事件保存地址和设备编号。'); return; }
+          state.endpoint = endpoint; state.deviceId = deviceId; state.backendEnabled = $('#backendEnabled').checked; addLog(`后端设置已更新：${endpoint}`); showNotice('后端设置已保存到测试版。'); render();
+        }
+      });
+      document.addEventListener('change', (event) => {
+        if (event.target.id === 'bleAutoReconnect' && nativeRuntime) { postNative('setAutoReconnect', { enabled: event.target.checked }); }
+        if (event.target.id === 'nextActionEnabled') { state.nextActionEnabled = event.target.checked; showNotice(state.nextActionEnabled ? '演示用 NextAction 已开启。' : '演示用 NextAction 已关闭。'); render(); }
+        if (event.target.id === 'backendEnabled') { state.backendEnabled = event.target.checked; save(); }
+      });
+      render();
+      if (nativeRuntime) {
+        postNative('get_state');
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) postNative('get_state'); });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Replace the hostname; DNS must point at this server. Caddy manages public HTTPS.
+# Keep uvicorn bound to 127.0.0.1:8788. Never expose an unauthenticated API publicly.
+agent.example.com {
+    request_body {
+        max_size 2MB
+    }
+    reverse_proxy 127.0.0.1:8788
+}

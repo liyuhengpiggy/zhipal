@@ -1,0 +1,128 @@
+{
+  "synthetic": true,
+  "seed": 2026102502,
+  "created_at": "2026-10-25T01:58:05.430394+08:00",
+  "count": 2000,
+  "class_counts": {
+    "phone_action": 700,
+    "vision": 700,
+    "clarify": 600
+  },
+  "category_counts": {
+    "fresh_phone_settings": 100,
+    "fresh_visual_transcription": 250,
+    "fresh_visual_spoken": 150,
+    "fresh_phone_ui": 150,
+    "fresh_visual_fields": 150,
+    "fresh_screen_ocr": 150,
+    "fresh_cross_module": 150,
+    "fresh_cancelled": 100,
+    "fresh_vague": 100,
+    "fresh_phone_media": 100,
+    "fresh_phone_tools": 100,
+    "fresh_phone_payload": 100,
+    "fresh_phone_apps": 150,
+    "fresh_visual_context": 150,
+    "fresh_unrelated": 100
+  },
+  "dataset_sha256": "1771a40ecc383486f01170f5e485f88562dedc02dd7a12f305fee9ee154c107c",
+  "prior_normalized_overlap": 0,
+  "deduplication": "NFKC + casefold + remove punctuation/whitespace; excludes earlier fixtures and route prototypes",
+  "excluded_unique_texts": 2260,
+  "excluded_sources": [
+    {
+      "path": "evaluation\\baseline_v1\\errors.jsonl",
+      "sha256": "7c8bcae763d7fdea4b5b4ea3f6692cf8b212c40b0d8869449ac4adf988190974"
+    },
+    {
+      "path": "evaluation\\baseline_v1\\results_2000.jsonl",
+      "sha256": "d236611600c3a88ae0f9342c0bfd7f5c8a6f500057ee0599ba83a2f6762c89a8"
+    },
+    {
+      "path": "evaluation\\calibration.jsonl",
+      "sha256": "e45e2d471a635d9f68aa2b70e8c62c83c79106d08388e1dd4aa91585b3dc75db"
+    },
+    {
+      "path": "evaluation\\calibration_outputs.jsonl",
+      "sha256": "2287c0d978431d00e1e3c50231c5135b4b6acdaa4e1fec17dfed8a0049e39d57"
+    },
+    {
+      "path": "evaluation\\errors.jsonl",
+      "sha256": "7c8bcae763d7fdea4b5b4ea3f6692cf8b212c40b0d8869449ac4adf988190974"
+    },
+    {
+      "path": "evaluation\\repeat_20261025_015525\\errors.jsonl",
+      "sha256": "36acd9cf97b243de99bf51f5249c031a7094571b24eb56e775fa00b722705a2b"
+    },
+    {
+      "path": "evaluation\\repeat_20261025_015525\\results.jsonl",
+      "sha256": "c7fa411c3015577586d1812dd20e2369ec40c33d596c65e925b7999d2c283014"
+    },
+    {
+      "path": "evaluation\\results_2000.jsonl",
+      "sha256": "d236611600c3a88ae0f9342c0bfd7f5c8a6f500057ee0599ba83a2f6762c89a8"
+    },
+    {
+      "path": "evaluation\\test_inputs_2000.jsonl",
+      "sha256": "aa0a1a5072848e6a58eab83a43d1a1931b39af1c953769ec67c5360ea5575159"
+    },
+    {
+      "path": "evaluation\\v21_regression\\errors.jsonl",
+      "sha256": "f936b4717cc100dc9a5da9b8b1c4410b9e25494e78425d6f8143319511f47f3e"
+    },
+    {
+      "path": "evaluation\\v21_regression\\results.jsonl",
+      "sha256": "391ddaa160f8511a6a64dc935ffe1b1fc4c4b31260d139715b69abd7b22df8b4"
+    },
+    {
+      "path": "evaluation\\v21_validation\\errors.jsonl",
+      "sha256": "2c645a20fbc73d7d6651316dc60895f96bfca58472d486d448f4cac6dcc17d22"
+    },
+    {
+      "path": "evaluation\\v21_validation\\results.jsonl",
+      "sha256": "f56b49e398b21b5bd93743f33907cbecdd73867fdac8e721dbd7532f9d62b5aa"
+    },
+    {
+      "path": "evaluation\\v2_regression\\errors.jsonl",
+      "sha256": "2d832e4f3d9846e20a943522688538340e563a6d85c6db8a2a86a10dbaabe5d6"
+    },
+    {
+      "path": "evaluation\\v2_regression\\results.jsonl",
+      "sha256": "497f776169b6e533166f8e5d893dadf5fb1f9c49a1886daccca8c9042bb7cf05"
+    },
+    {
+      "path": "evaluation\\v2_validation\\errors.jsonl",
+      "sha256": "d1b93a74ac2104243a3b4b42a5d1e0ef1338fd808866a6e0bbc50e324de5b2b1"
+    },
+    {
+      "path": "evaluation\\v2_validation\\results.jsonl",
+      "sha256": "8474a0dc69890b31ed8c6afded78f0b475a974826862b00aefa94e278f2da6f6"
+    },
+    {
+      "path": "evaluation\\validation.jsonl",
+      "sha256": "89debd6a24fb1e2dd075b0ff6089bfc89771f5ea875e50fc3a5ab6e09ddab482"
+    },
+    {
+      "path": "routes.json",
+      "sha256": "3e3534f653b2b0ffdb364ace23c62aea0f88c086a5c756f8c1f274aa44007797"
+    },
+    {
+      "path": "evaluation\\baseline_v1\\routes.json",
+      "sha256": "88cab361708aff7160fbbce409a192d0f05865734e95a6c401b50100a4b6199c"
+    }
+  ],
+  "frozen_classifier_hashes": {
+    "router.py": "8df65cbf90ca350f5dca18815d01fb455bf716f1d68f5ce113dbcce708adf771",
+    "intent_policy.py": "dc0c0b110e56784eb4319820dde83585b080bce3ffca49ee71a52be6e5aae613",
+    "routes.json": "3e3534f653b2b0ffdb364ace23c62aea0f88c086a5c756f8c1f274aa44007797",
+    "router_config.json": "ea7679aade2d746b3bf85b4734a7ce88519d6be1fb9d43184c91d4fb2b9f2d5d",
+    "app.py": "135f264a1403b8d649e3f86da99c4cfbfc20c2efbac85b9c6be5da06f174bd34",
+    "server.py": "7c05d1a22cf003e33ae024d57d42af9e8addec138a77f7b0dfeba59e12dd3b5b"
+  },
+  "label_policy": {
+    "vision": "摄像头前实体文本读取",
+    "phone_action": "手机应用/界面操作，消息正文不改变外层意图",
+    "clarify": "取消、含糊、跨模块、屏幕读字、无关对话"
+  },
+  "limitations": "新模板合成，期望先按任务定义生成，未使用预测定标签；本轮不据此调参。去重不代表语义独立，也不代表真实ASR或生产准确率。"
+}

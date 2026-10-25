@@ -1,0 +1,62 @@
+[
+  {
+    "file": "annotations-23.0.0.jar",
+    "sha256": "7b0f19724082cbfcbc66e5abea2b9bc92cf08a1ea11e191933ed43801eb3cd05",
+    "bytes": 29371,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlin-stdlib-1.9.22.jar",
+    "sha256": "6abe146c27864138b874ccccfe5f534e3eb923c99a1b7b5d45494ee5694f3e0a",
+    "bytes": 1718956,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlin-stdlib-jdk7-1.9.10.jar",
+    "sha256": "ac6361bf9ad1ed382c2103d9712c47cdec166232b4903ed596e8876b0681c9b7",
+    "bytes": 959,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlin-stdlib-jdk8-1.9.10.jar",
+    "sha256": "a4c74d94d64ce1abe53760fe0389dd941f6fc558d0dab35e47c085a11ec80f28",
+    "bytes": 965,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlinx-coroutines-android-1.7.3.jar",
+    "sha256": "59fffb26bee12c32dadcfa5d420c2a7db85d3253518128b170efda726613256d",
+    "bytes": 20637,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlinx-coroutines-core-jvm-1.7.3.jar",
+    "sha256": "1ab3acc38f3e7355c4f9d1ec62107a46fa73c899f3070d055e5d4373dfe67e12",
+    "bytes": 1551152,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlinx-serialization-core-jvm-1.6.2.jar",
+    "sha256": "8e6fc04e1a2efd2acbbc5503a1dc9d988166f99e4f1f51ef6b91c3a52077bdb1",
+    "bytes": 419740,
+    "embedded_notices": []
+  },
+  {
+    "file": "kotlinx-serialization-json-jvm-1.6.2.jar",
+    "sha256": "8d2718bb042e830b12b7fb10af26d0fba43de1f1f9ffe0a6b131d4d251aac2cc",
+    "bytes": 258342,
+    "embedded_notices": []
+  },
+  {
+    "file": "okhttp-4.12.0.jar",
+    "sha256": "b1050081b14bb7a3a7e55a4d3ef01b5dcfabc453b4573a4fc019767191d5f4e0",
+    "bytes": 789531,
+    "embedded_notices": []
+  },
+  {
+    "file": "okio-jvm-3.6.0.jar",
+    "sha256": "67543f0736fc422ae927ed0e504b98bc5e269fda0d3500579337cb713da28412",
+    "bytes": 359580,
+    "embedded_notices": []
+  }
+]

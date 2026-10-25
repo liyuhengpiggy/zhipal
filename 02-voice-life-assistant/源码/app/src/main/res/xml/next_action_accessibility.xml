@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeViewClicked|typeViewScrolled|typeWindowStateChanged|typeWindowContentChanged|typeViewTextChanged|typeTouchInteractionStart"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows|flagRequestAccessibilityButton"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="true"
+    android:canTakeScreenshot="true"
+    android:description="@string/next_action_accessibility_description"
+    android:notificationTimeout="120"
+    android:settingsActivity="cn.seniorvoice.demo.assist.AssistSettingsActivity" />

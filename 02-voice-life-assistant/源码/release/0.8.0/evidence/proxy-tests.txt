@@ -1,0 +1,27 @@
+✔ A command uses fixed text-only Qwen payload and returns a catalog app id (116.6547ms)
+✔ A command shares proxy bearer auth and rejects malformed schema before upstream (104.9744ms)
+✔ injection, URI/code, multi-step and sensitive requests are rejected without model execution (18.0231ms)
+✔ invented IDs, actions, URI intents and multi-key intents fail closed (59.9314ms)
+✔ screen actions require a current real control/action and sensitive controls become unsupported (30.7415ms)
+✔ other valid single intents preserve their exact version 1 response schema (51.7297ms)
+✔ provider errors and malformed JSON do not expose provider details (19.3312ms)
+✔ invalid provider clarification text is classified as an upstream failure (21.4611ms)
+✔ A command body and catalog limits are enforced (45.3947ms)
+✔ the Android maximum catalogs, UUID task IDs and label lengths fit the A endpoint (15.139ms)
+✔ closing a different, unknown, ambiguous or unobserved app asks for clarification without a model call (46.5315ms)
+✔ a named exit requires the current catalog package and cannot become arbitrary home navigation (31.6189ms)
+✔ a null screen still supports opening apps, calling contacts and creating vision intents (15.128ms)
+✔ natural Home requests are model proposals but cannot replace an explicit app launch (60.3706ms)
+✔ natural exit phrasing reaches the model and stays bound to the observed foreground app (35.5283ms)
+✔ one/two JPEG frames round trip, provider authorization injected only at fixed endpoint (21.9017ms)
+✔ reject missing/wrong token, model overrides, tools, streaming and invalid/external images before forwarding (110.1331ms)
+✔ provider errors never expose provider key or error body (5.257ms)
+✔ oversized request rejected before forwarding (3055.869ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3942.7766

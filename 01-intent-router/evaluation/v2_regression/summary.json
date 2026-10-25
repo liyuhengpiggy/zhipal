@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-10-25T01:50:11.030741+08:00",
+  "finished_at": "2026-10-25T01:50:28.779537+08:00",
+  "synthetic": true,
+  "total": 2000,
+  "correct": 1939,
+  "incorrect": 61,
+  "accuracy": 0.9695,
+  "per_class": {
+    "vision": {
+      "count": 700,
+      "correct": 700,
+      "precision": 0.9283819628647215,
+      "recall": 1.0,
+      "f1": 0.9628610729023384
+    },
+    "phone_action": {
+      "count": 700,
+      "correct": 699,
+      "precision": 0.9914893617021276,
+      "recall": 0.9985714285714286,
+      "f1": 0.9950177935943061
+    },
+    "clarify": {
+      "count": 600,
+      "correct": 540,
+      "precision": 0.9981515711645101,
+      "recall": 0.9,
+      "f1": 0.9465381244522348
+    }
+  },
+  "confusion_matrix_expected_rows_predicted_columns": {
+    "vision": {
+      "vision": 700,
+      "phone_action": 0,
+      "clarify": 0,
+      "http_error": 0
+    },
+    "phone_action": {
+      "vision": 0,
+      "phone_action": 699,
+      "clarify": 1,
+      "http_error": 0
+    },
+    "clarify": {
+      "vision": 54,
+      "phone_action": 6,
+      "clarify": 540,
+      "http_error": 0
+    }
+  },
+  "latency_ms": {
+    "mean": 8.697707198909484,
+    "median": 8.548700017854571,
+    "p95": 10.356700047850609
+  },
+  "duration_seconds": 17.748129000072367,
+  "http_errors": 0,
+  "prediction_counts": {
+    "phone_action": 705,
+    "vision": 754,
+    "clarify": 541
+  },
+  "decision_sources": {
+    "structure": 1848,
+    "semantic": 152
+  },
+  "error_reason_counts": {
+    "explicit_visual_text_task": 54,
+    "explicit_phone_task": 6,
+    "small_margin": 1
+  },
+  "false_dispatch_on_clarify": 60,
+  "dataset": "D:\\Codex\\AI创作大赛\\intent-router\\evaluation\\test_inputs_2000.jsonl",
+  "dataset_sha256": "aa0a1a5072848e6a58eab83a43d1a1931b39af1c953769ec67c5360ea5575159",
+  "service": {
+    "status": "ready",
+    "policy_version": "hybrid-v2",
+    "threshold": 0.45,
+    "margin": 0.06
+  },
+  "base_url": "http://127.0.0.1:8010",
+  "code_hashes": {
+    "router.py": "8df65cbf90ca350f5dca18815d01fb455bf716f1d68f5ce113dbcce708adf771",
+    "intent_policy.py": "f96d511a61869cb57315e37a08a12031150f2647f6501aff2275839bfc2efa97",
+    "routes.json": "3e3534f653b2b0ffdb364ace23c62aea0f88c086a5c756f8c1f274aa44007797",
+    "router_config.json": "ea7679aade2d746b3bf85b4734a7ce88519d6be1fb9d43184c91d4fb2b9f2d5d",
+    "app.py": "135f264a1403b8d649e3f86da99c4cfbfc20c2efbac85b9c6be5da06f174bd34",
+    "server.py": "7c05d1a22cf003e33ae024d57d42af9e8addec138a77f7b0dfeba59e12dd3b5b"
+  },
+  "limitations": "合成测试。原2000条是已见错误的回归集；新增120条未参与阈值校准，但仍是开发者手写合成样本，不能代表生产准确率。"
+}

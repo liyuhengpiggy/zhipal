@@ -1,0 +1,46 @@
+{
+  "template_info": {
+    "app_version": "0.7.8",
+    "package_name": "cn.seniorvoice.demo",
+    "purpose": "源码默认配置核对模板；不是从真机导出的实际配置。请在 App 设置中填写并保存，当前不支持直接导入此 JSON。",
+    "secrets": "所有令牌均留空；第三方模型 API Key 只放自建云端代理环境，不填入 APK。",
+    "device_id": "默认读取为空；首次进入首页时生成 elder- 加随机编号。实际设备编号以手机为准。",
+    "lan_flags": "仅 debug 构建可在显式启用时使用符合地址规则的内网 HTTP，release 要求 HTTPS。"
+  },
+  "shared_preferences": {
+    "app_settings": {
+      "endpoint": "",
+      "token": "",
+      "device_id": ""
+    },
+    "assist_settings": {
+      "base_url": "https://ai-glasses-backend-7bj3.onrender.com",
+      "api_token": "",
+      "ocr_url": "",
+      "ocr_token": "",
+      "ocr_lan": false,
+      "unified_vision_enabled": false,
+      "unified_vision_url": "https://ai-glasses-backend-7bj3.onrender.com",
+      "unified_vision_token": "",
+      "unified_vision_lan": false,
+      "b_agent_enabled": false,
+      "b_agent_url": "",
+      "b_agent_model": "Qwen/Qwen3-VL-8B-Instruct",
+      "b_agent_token": "",
+      "b_agent_lan": false,
+      "b_enabled": false,
+      "dwell_seconds": 25,
+      "tts_enabled": true
+    }
+  },
+  "historical_addresses_to_verify": {
+    "legacy_ocr_https": "https://medicine-vision-ocr.onrender.com",
+    "legacy_ocr_debug_lan": "http://192.168.1.17:8001",
+    "note": "以上是用户此前提供的地址，不是本轮成功调用证明，也不是默认已写入 APK 的 OCR 地址。"
+  },
+  "deployment_gaps": [
+    "统一视觉任务接口须由后端按 docs/统一视觉任务接口_0.7.8.md 部署并验证后再开启。",
+    "B 自建代理地址及独立访问令牌仍须由部署同学提供；手机不能使用第三方提供商 API Key 替代代理令牌。",
+    "记录 endpoint 是完整事件 POST 地址，不是图片 /upload 地址；初始留空表示仅保存本机记录。"
+  ]
+}

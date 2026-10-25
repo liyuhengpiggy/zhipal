@@ -1,0 +1,84 @@
+{
+  "total": 2000,
+  "route_correct": 1725,
+  "route_accuracy": 0.8625,
+  "vision_total": 700,
+  "vision_subtype_correct": 627,
+  "vision_subtype_accuracy": 0.8957142857142857,
+  "http_errors": 0,
+  "false_dispatch_on_clarify": 99,
+  "confusion": {
+    "vision": {
+      "vision": 631,
+      "phone_action": 3,
+      "clarify": 66,
+      "http_error": 0
+    },
+    "phone_action": {
+      "vision": 4,
+      "phone_action": 593,
+      "clarify": 103,
+      "http_error": 0
+    },
+    "clarify": {
+      "vision": 22,
+      "phone_action": 77,
+      "clarify": 501,
+      "http_error": 0
+    }
+  },
+  "vision_subtype_confusion": {
+    "read_text": {
+      "read_text": 216,
+      "recognize_object": 0,
+      "recognize_environment": 0,
+      "null": 34
+    },
+    "recognize_object": {
+      "read_text": 0,
+      "recognize_object": 163,
+      "recognize_environment": 0,
+      "null": 37
+    },
+    "recognize_environment": {
+      "read_text": 2,
+      "recognize_object": 0,
+      "recognize_environment": 248,
+      "null": 0
+    }
+  },
+  "prediction_counts": {
+    "clarify": 670,
+    "vision": 657,
+    "phone_action": 673
+  },
+  "decision_sources": {
+    "structure": 1454,
+    "semantic": 546
+  },
+  "vision_task_sources": {
+    "structure": 619,
+    "not_applicable": 69,
+    "semantic": 12
+  },
+  "latency_ms": {
+    "mean": 8.873335049836896,
+    "median": 8.767750055994838,
+    "p95": 10.342099936679006
+  },
+  "dataset_sha256": "e30cd1885756d309309f204fecdf6c74ce188d42e6174d1d69bca8e468ed4a67",
+  "service": {
+    "status": "ready",
+    "policy_version": "hybrid-v2.3",
+    "threshold": 0.45,
+    "margin": 0.06,
+    "vision_task_threshold": 0.45,
+    "vision_task_margin": 0.04,
+    "vision_tasks": [
+      "read_text",
+      "recognize_object",
+      "recognize_environment"
+    ]
+  },
+  "synthetic": true
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/BaseAgent.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/BaseAgent.kt",
+    "upstream_sha256": "9402b5be4ff719b9fa6bc1624f5dd1febd0933835bfceca94a1ec42cc6d16cd1",
+    "local_sha256": "9402b5be4ff719b9fa6bc1624f5dd1febd0933835bfceca94a1ec42cc6d16cd1",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/AgentAction.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/AgentAction.kt",
+    "upstream_sha256": "65fca5c2cfc09a15b6872162cedc89320b5d4dfae421ccbfefd3d95bbfefa71f",
+    "local_sha256": "65fca5c2cfc09a15b6872162cedc89320b5d4dfae421ccbfefd3d95bbfefa71f",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/InfoPool.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/InfoPool.kt",
+    "upstream_sha256": "4a628473e5578ed134287f314291b44a3055d526af93853433b5eaa8cbcede5c",
+    "local_sha256": "4a628473e5578ed134287f314291b44a3055d526af93853433b5eaa8cbcede5c",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/PromptConstants.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/PromptConstants.kt",
+    "upstream_sha256": "73e1f7cb8e5c9950c13cf1faf47ffe8e01bf0725a0016b809380e9d40cc209f3",
+    "local_sha256": "73e1f7cb8e5c9950c13cf1faf47ffe8e01bf0725a0016b809380e9d40cc209f3",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/Manager.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/Manager.kt",
+    "upstream_sha256": "6dfaec73ca4476a211bc32cc08687def88f013da59eb19cc753e09934f0da735",
+    "local_sha256": "1a8995f06806e4484cf5107805351efd570ca50b31030c29dec83ba0b501795d",
+    "unchanged": false
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/Executor.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/Executor.kt",
+    "upstream_sha256": "0340dd033ce1945f15e1388f768bf5343e30c7e6e55224d4c69cf2b7bacfd1ea",
+    "local_sha256": "ce3001851ae3ad48e3f08b680d95853253916f92d9e9da733c49977a5b2f65de",
+    "unchanged": false
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/agent/ActionReflector.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/agent/ActionReflector.kt",
+    "upstream_sha256": "8db4ba4d1ffb8a4681a690cc45710f6766a7068dba19b9adca2850271702c91c",
+    "local_sha256": "8db4ba4d1ffb8a4681a690cc45710f6766a7068dba19b9adca2850271702c91c",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/api/ApiConfig.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/api/ApiConfig.kt",
+    "upstream_sha256": "8815be8009d2a82e3587c7346f93dd8598318b4f2ee6c97a795c04d2b78a6d77",
+    "local_sha256": "8815be8009d2a82e3587c7346f93dd8598318b4f2ee6c97a795c04d2b78a6d77",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/api/VlmApiClient.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/api/VlmApiClient.kt",
+    "upstream_sha256": "d16c755f78d47ff3ff560a90fc3c9ff59b8a54227b4d5836d011cf66111e2a4c",
+    "local_sha256": "d16c755f78d47ff3ff560a90fc3c9ff59b8a54227b4d5836d011cf66111e2a4c",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/api/OpenAiCompatibleClient.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/api/OpenAiCompatibleClient.kt",
+    "upstream_sha256": "dadeb295cee33a78be29c2458eeff776d58b0f839b1065abee068321ce64e24d",
+    "local_sha256": "46328c002a26075b73fd7b1d19a9fd25b662b65d17e5f012dce05ff7ec475fb5",
+    "unchanged": false
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/api/ImageEncoder.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/api/ImageEncoder.kt",
+    "upstream_sha256": "40abbc20cf5b4dc278518fb2aa91e91d42609ee875e7c484d0be8251fc107545",
+    "local_sha256": "40abbc20cf5b4dc278518fb2aa91e91d42609ee875e7c484d0be8251fc107545",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/controller/DeviceController.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/controller/DeviceController.kt",
+    "upstream_sha256": "370d37be7da49c77b080294095365a9d97bfd2262d99c798537ad071f6fe9572",
+    "local_sha256": "370d37be7da49c77b080294095365a9d97bfd2262d99c798537ad071f6fe9572",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/controller/UiElementDetector.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/controller/UiElementDetector.kt",
+    "upstream_sha256": "a0e041e13581d101c5307a1c850e2458e6da3dda648d16a2ce83ef4df870b9fd",
+    "local_sha256": "2945d61b9ad8fad596eebe24880dec5bbcc71915de616f9832137777e16ba9c3",
+    "unchanged": false
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/controller/ScreenCaptureManager.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/controller/ScreenCaptureManager.kt",
+    "upstream_sha256": "665e71188c198ae760fae9afad685c409b4a48ae93037f48048daa88450bd0a9",
+    "local_sha256": "665e71188c198ae760fae9afad685c409b4a48ae93037f48048daa88450bd0a9",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/util/JsonActionParser.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/util/JsonActionParser.kt",
+    "upstream_sha256": "3e7b55d85d567d0d1f5133fbd934217535f7d7364e8715d024deb599176c39a1",
+    "local_sha256": "3e7b55d85d567d0d1f5133fbd934217535f7d7364e8715d024deb599176c39a1",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/util/CoordinateConverter.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/util/CoordinateConverter.kt",
+    "upstream_sha256": "b88cd8a9d6406ec8a1bb34557323e518dc5816e081e41e12ff72be8653f6c197",
+    "local_sha256": "b88cd8a9d6406ec8a1bb34557323e518dc5816e081e41e12ff72be8653f6c197",
+    "unchanged": true
+  },
+  {
+    "upstream": "app/src/main/java/com/mobileagent/app/service/AgentAccessibilityService.kt",
+    "local": "android_library/src/main/java/com/mobileagent/app/controller/AccessibilityActions.kt",
+    "upstream_sha256": "cf9fbc550fecb98a793dd565a504782bf0c41c644381a3be58f25e9d8c6ed352",
+    "local_sha256": "3ed6746069b58ea70f18b6585d4251fe67d6109200880d93c956f62ef438ea74",
+    "unchanged": false,
+    "note": "Extracted existing tap/swipe/type/global-action methods; injected host AccessibilityService, checked rejected gesture, removed Back fallback for Enter."
+  }
+]
