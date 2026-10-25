@@ -2,6 +2,9 @@
 
 原四个交付包中以下文件未提交，原因分别为「超过 GitHub 单文件 100 MB 硬限制」「可重新生成」或「二进制产物非源码」。
 
+> 本仓库根目录另行提供了 `Zhipal-0.9.5-Cover.apk`（84.7 MB，versionName `0.9.5-hardware-b`），
+> 它是独立于四个交付包的后续构建，与下表中的安装包不是同一版本。
+
 | 原文件 | 大小 | 原因 | 获取方式 |
 |---|---|---|---|
 | `02-voice-life-assistant/待合并视觉后端/medicine-vision-apk-integration.zip` | 100.7 MB | 超过 GitHub 单文件 100 MB 限制 | 向交付方索取原包 |

@@ -31,6 +31,9 @@ local.properties
 captures/
 .cxx/
 
+# 根目录随仓库分发的版本安装包（显式放行，需人工确认后再加）
+!/Zhipal-*.apk
+
 # ---- Node ----
 node_modules/
 npm-debug.log*

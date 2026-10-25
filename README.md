@@ -2,7 +2,7 @@
 
 本仓库把四个独立交付包合并为一棵目录树，便于外部协作者一次性获取全部源码、文档与联调资料。
 
-> 归档日期：2026-10-25　｜　内容规模：666 个文件，约 131 MB（已剔除超限二进制，见文末）
+> 归档日期：2026-10-25　｜　内容规模：660 个文件，约 216 MB（含 84.7 MB 安装包；已剔除超限二进制，见文末）
 
 ## 目录结构
 
@@ -12,6 +12,15 @@
 | `02-voice-life-assistant/` | 语音生活助手 0.8.0 精简合并交接包 | Android 工程 + 离线语音模型 + 后端代理 + 交接文档 | Kotlin / Gradle / Node / Python |
 | `03-ai-glasses-harmony42/` | ai-glasses-harmony42-integration-source | 智能眼镜后端、OCR 服务、Android 移动端、部署脚本 | Python / FastAPI / Android |
 | `04-assistant-merged/` | 智能助手 完整合并交付包 | 模型调用层、Android 功能 SDK（AAR/JAR）、Maven 元数据、集成文档 | Java / Android |
+
+根目录另附可直接安装的构建产物：
+
+| 文件 | 包名 | versionName | 大小 | SHA256 |
+|---|---|---|---|---|
+| `Zhipal-0.9.5-Cover.apk` | `cn.seniorvoice.demo` | `0.9.5-hardware-b` | 84.7 MB | `fa4e37960585a2bebde82bbe703d1a6f26162667cf89ec47cac6701891fab774` |
+
+> 注意：文件名标注为 `Cover`，但安装包内 `versionName` 实际为 `0.9.5-hardware-b`（硬件 B 通道构建）。
+> 安装前请核对，避免与同名路演构建混淆。
 
 ## 各部分入口文档
 
