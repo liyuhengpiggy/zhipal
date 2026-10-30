@@ -11,15 +11,15 @@ services:
         value: 3.11.11
       - key: AI_MODE
         value: mock
-      # B Agent 视觉识别接 DeepSeek（OpenAI 兼容）。VISION_API_KEY 与
-      # VISION_API_TOKEN 是密钥，不能写在 Blueprint 里，需在 Render
-      # 控制台 Environment 手动填，或同步 Blueprint 后覆盖。
+      # B Agent 视觉识别接千问 Qwen（SiliconFlow，与 APK 原版一致）。
+      # VISION_API_KEY 与 VISION_API_TOKEN 是密钥，不能写在 Blueprint 里，
+      # 需在 Render 控制台 Environment 手动填，或同步 Blueprint 后覆盖。
       - key: VISION_MODE
         value: openai_compatible
       - key: VISION_BASE_URL
-        value: https://api.deepseek.com/v1
+        value: https://api.siliconflow.cn/v1
       - key: VISION_MODEL
-        value: deepseek-chat
+        value: Qwen/Qwen3-VL-8B-Instruct
       - key: VISION_API_KEY
         value: ""
       - key: VISION_API_TOKEN
